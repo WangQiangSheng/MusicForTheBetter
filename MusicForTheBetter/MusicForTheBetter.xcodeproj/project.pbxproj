@@ -1,0 +1,538 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2591634B1C438CF50044942E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2591634A1C438CF50044942E /* main.m */; };
+		2591634E1C438CF50044942E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2591634D1C438CF50044942E /* AppDelegate.m */; };
+		259163511C438CF50044942E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 259163501C438CF50044942E /* ViewController.m */; };
+		259163541C438CF50044942E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 259163521C438CF50044942E /* Main.storyboard */; };
+		259163571C438CF50044942E /* MusicForTheBetter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 259163551C438CF50044942E /* MusicForTheBetter.xcdatamodeld */; };
+		259163591C438CF50044942E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 259163581C438CF50044942E /* Assets.xcassets */; };
+		2591635C1C438CF50044942E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2591635A1C438CF50044942E /* LaunchScreen.storyboard */; };
+		259163671C438CF50044942E /* MusicForTheBetterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 259163661C438CF50044942E /* MusicForTheBetterTests.m */; };
+		259163721C438CF50044942E /* MusicForTheBetterUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 259163711C438CF50044942E /* MusicForTheBetterUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		259163631C438CF50044942E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2591633E1C438CF50044942E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 259163451C438CF50044942E;
+			remoteInfo = MusicForTheBetter;
+		};
+		2591636E1C438CF50044942E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2591633E1C438CF50044942E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 259163451C438CF50044942E;
+			remoteInfo = MusicForTheBetter;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		259163461C438CF50044942E /* MusicForTheBetter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicForTheBetter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2591634A1C438CF50044942E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2591634C1C438CF50044942E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2591634D1C438CF50044942E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2591634F1C438CF50044942E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		259163501C438CF50044942E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		259163531C438CF50044942E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		259163561C438CF50044942E /* MusicForTheBetter.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MusicForTheBetter.xcdatamodel; sourceTree = "<group>"; };
+		259163581C438CF50044942E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2591635B1C438CF50044942E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2591635D1C438CF50044942E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		259163621C438CF50044942E /* MusicForTheBetterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicForTheBetterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		259163661C438CF50044942E /* MusicForTheBetterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MusicForTheBetterTests.m; sourceTree = "<group>"; };
+		259163681C438CF50044942E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2591636D1C438CF50044942E /* MusicForTheBetterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicForTheBetterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		259163711C438CF50044942E /* MusicForTheBetterUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MusicForTheBetterUITests.m; sourceTree = "<group>"; };
+		259163731C438CF50044942E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		259163431C438CF50044942E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2591635F1C438CF50044942E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2591636A1C438CF50044942E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2591633D1C438CF50044942E = {
+			isa = PBXGroup;
+			children = (
+				259163481C438CF50044942E /* MusicForTheBetter */,
+				259163651C438CF50044942E /* MusicForTheBetterTests */,
+				259163701C438CF50044942E /* MusicForTheBetterUITests */,
+				259163471C438CF50044942E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		259163471C438CF50044942E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				259163461C438CF50044942E /* MusicForTheBetter.app */,
+				259163621C438CF50044942E /* MusicForTheBetterTests.xctest */,
+				2591636D1C438CF50044942E /* MusicForTheBetterUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		259163481C438CF50044942E /* MusicForTheBetter */ = {
+			isa = PBXGroup;
+			children = (
+				2591634C1C438CF50044942E /* AppDelegate.h */,
+				2591634D1C438CF50044942E /* AppDelegate.m */,
+				2591634F1C438CF50044942E /* ViewController.h */,
+				259163501C438CF50044942E /* ViewController.m */,
+				259163521C438CF50044942E /* Main.storyboard */,
+				259163581C438CF50044942E /* Assets.xcassets */,
+				2591635A1C438CF50044942E /* LaunchScreen.storyboard */,
+				2591635D1C438CF50044942E /* Info.plist */,
+				259163551C438CF50044942E /* MusicForTheBetter.xcdatamodeld */,
+				259163491C438CF50044942E /* Supporting Files */,
+			);
+			path = MusicForTheBetter;
+			sourceTree = "<group>";
+		};
+		259163491C438CF50044942E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2591634A1C438CF50044942E /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		259163651C438CF50044942E /* MusicForTheBetterTests */ = {
+			isa = PBXGroup;
+			children = (
+				259163661C438CF50044942E /* MusicForTheBetterTests.m */,
+				259163681C438CF50044942E /* Info.plist */,
+			);
+			path = MusicForTheBetterTests;
+			sourceTree = "<group>";
+		};
+		259163701C438CF50044942E /* MusicForTheBetterUITests */ = {
+			isa = PBXGroup;
+			children = (
+				259163711C438CF50044942E /* MusicForTheBetterUITests.m */,
+				259163731C438CF50044942E /* Info.plist */,
+			);
+			path = MusicForTheBetterUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		259163451C438CF50044942E /* MusicForTheBetter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 259163761C438CF50044942E /* Build configuration list for PBXNativeTarget "MusicForTheBetter" */;
+			buildPhases = (
+				259163421C438CF50044942E /* Sources */,
+				259163431C438CF50044942E /* Frameworks */,
+				259163441C438CF50044942E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MusicForTheBetter;
+			productName = MusicForTheBetter;
+			productReference = 259163461C438CF50044942E /* MusicForTheBetter.app */;
+			productType = "com.apple.product-type.application";
+		};
+		259163611C438CF50044942E /* MusicForTheBetterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 259163791C438CF50044942E /* Build configuration list for PBXNativeTarget "MusicForTheBetterTests" */;
+			buildPhases = (
+				2591635E1C438CF50044942E /* Sources */,
+				2591635F1C438CF50044942E /* Frameworks */,
+				259163601C438CF50044942E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				259163641C438CF50044942E /* PBXTargetDependency */,
+			);
+			name = MusicForTheBetterTests;
+			productName = MusicForTheBetterTests;
+			productReference = 259163621C438CF50044942E /* MusicForTheBetterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2591636C1C438CF50044942E /* MusicForTheBetterUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2591637C1C438CF50044942E /* Build configuration list for PBXNativeTarget "MusicForTheBetterUITests" */;
+			buildPhases = (
+				259163691C438CF50044942E /* Sources */,
+				2591636A1C438CF50044942E /* Frameworks */,
+				2591636B1C438CF50044942E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2591636F1C438CF50044942E /* PBXTargetDependency */,
+			);
+			name = MusicForTheBetterUITests;
+			productName = MusicForTheBetterUITests;
+			productReference = 2591636D1C438CF50044942E /* MusicForTheBetterUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2591633E1C438CF50044942E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = meiyou001;
+				TargetAttributes = {
+					259163451C438CF50044942E = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					259163611C438CF50044942E = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 259163451C438CF50044942E;
+					};
+					2591636C1C438CF50044942E = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 259163451C438CF50044942E;
+					};
+				};
+			};
+			buildConfigurationList = 259163411C438CF50044942E /* Build configuration list for PBXProject "MusicForTheBetter" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2591633D1C438CF50044942E;
+			productRefGroup = 259163471C438CF50044942E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				259163451C438CF50044942E /* MusicForTheBetter */,
+				259163611C438CF50044942E /* MusicForTheBetterTests */,
+				2591636C1C438CF50044942E /* MusicForTheBetterUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		259163441C438CF50044942E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2591635C1C438CF50044942E /* LaunchScreen.storyboard in Resources */,
+				259163591C438CF50044942E /* Assets.xcassets in Resources */,
+				259163541C438CF50044942E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		259163601C438CF50044942E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2591636B1C438CF50044942E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		259163421C438CF50044942E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				259163511C438CF50044942E /* ViewController.m in Sources */,
+				259163571C438CF50044942E /* MusicForTheBetter.xcdatamodeld in Sources */,
+				2591634E1C438CF50044942E /* AppDelegate.m in Sources */,
+				2591634B1C438CF50044942E /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2591635E1C438CF50044942E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				259163671C438CF50044942E /* MusicForTheBetterTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		259163691C438CF50044942E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				259163721C438CF50044942E /* MusicForTheBetterUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		259163641C438CF50044942E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 259163451C438CF50044942E /* MusicForTheBetter */;
+			targetProxy = 259163631C438CF50044942E /* PBXContainerItemProxy */;
+		};
+		2591636F1C438CF50044942E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 259163451C438CF50044942E /* MusicForTheBetter */;
+			targetProxy = 2591636E1C438CF50044942E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		259163521C438CF50044942E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				259163531C438CF50044942E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2591635A1C438CF50044942E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2591635B1C438CF50044942E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		259163741C438CF50044942E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		259163751C438CF50044942E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		259163771C438CF50044942E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MusicForTheBetter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.meiyou.MusicForTheBetter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		259163781C438CF50044942E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MusicForTheBetter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.meiyou.MusicForTheBetter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		2591637A1C438CF50044942E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MusicForTheBetterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.meiyou.MusicForTheBetterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MusicForTheBetter.app/MusicForTheBetter";
+			};
+			name = Debug;
+		};
+		2591637B1C438CF50044942E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MusicForTheBetterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.meiyou.MusicForTheBetterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MusicForTheBetter.app/MusicForTheBetter";
+			};
+			name = Release;
+		};
+		2591637D1C438CF50044942E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MusicForTheBetterUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.meiyou.MusicForTheBetterUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MusicForTheBetter;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		2591637E1C438CF50044942E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MusicForTheBetterUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.meiyou.MusicForTheBetterUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MusicForTheBetter;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		259163411C438CF50044942E /* Build configuration list for PBXProject "MusicForTheBetter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				259163741C438CF50044942E /* Debug */,
+				259163751C438CF50044942E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		259163761C438CF50044942E /* Build configuration list for PBXNativeTarget "MusicForTheBetter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				259163771C438CF50044942E /* Debug */,
+				259163781C438CF50044942E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		259163791C438CF50044942E /* Build configuration list for PBXNativeTarget "MusicForTheBetterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2591637A1C438CF50044942E /* Debug */,
+				2591637B1C438CF50044942E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		2591637C1C438CF50044942E /* Build configuration list for PBXNativeTarget "MusicForTheBetterUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2591637D1C438CF50044942E /* Debug */,
+				2591637E1C438CF50044942E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		259163551C438CF50044942E /* MusicForTheBetter.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				259163561C438CF50044942E /* MusicForTheBetter.xcdatamodel */,
+			);
+			currentVersion = 259163561C438CF50044942E /* MusicForTheBetter.xcdatamodel */;
+			path = MusicForTheBetter.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 2591633E1C438CF50044942E /* Project object */;
+}
