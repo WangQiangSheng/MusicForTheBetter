@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WQSKeyBoardViewController">
+            <connections>
+                <outlet property="keyBoardCenterView" destination="05c-bc-ucA" id="zSx-DN-xKF"/>
+                <outlet property="keyButton11" destination="eGW-g4-PEl" id="n4e-oh-hFu"/>
+                <outlet property="keyButton12" destination="uYE-Ai-wCG" id="mkZ-48-byJ"/>
+                <outlet property="keyButton13" destination="hCi-10-hya" id="FOP-Xc-9T6"/>
+                <outlet property="keyButton14" destination="LZ2-dh-9GK" id="awg-Ts-y1s"/>
+                <outlet property="keyButton15" destination="vcb-bQ-9Dg" id="gh2-Iy-H4b"/>
+                <outlet property="keyButton21" destination="Cps-d3-f9f" id="Jvg-PC-dL1"/>
+                <outlet property="keyButton22" destination="bum-4w-jl2" id="qxH-Zr-7wj"/>
+                <outlet property="keyButton23" destination="jxj-Js-4BE" id="1bf-3M-Yn4"/>
+                <outlet property="keyButton24" destination="2b5-ir-omd" id="XoQ-kE-dsW"/>
+                <outlet property="keyButton25" destination="ZhX-Sd-hfG" id="t75-5Y-UjF"/>
+                <outlet property="keyButton31" destination="sxG-pN-TPn" id="JJA-7K-4VF"/>
+                <outlet property="keyButton32" destination="MGE-xQ-Oza" id="qHH-7q-Uu0"/>
+                <outlet property="keyButton33" destination="hw3-w1-9rE" id="a7d-DI-WLz"/>
+                <outlet property="keyButton34" destination="3hM-Tg-zbe" id="NUp-OG-5hZ"/>
+                <outlet property="keyButton35" destination="RQL-sc-dej" id="MUo-zd-51I"/>
+                <outlet property="keyButton41" destination="HMD-vE-aI3" id="GSV-tE-eg2"/>
+                <outlet property="keyButton42" destination="5Iy-Wn-gmi" id="K0o-J4-pPK"/>
+                <outlet property="keyButton43" destination="I9T-9a-WOi" id="zLK-dt-RDB"/>
+                <outlet property="keyButton44" destination="Vi8-ib-aTj" id="VQB-VL-0UH"/>
+                <outlet property="keyButton45" destination="hMT-gD-GSU" id="gmy-xA-NAn"/>
+                <outlet property="key_1_1" destination="DuG-RH-5ID" id="Sfx-ZX-J7H"/>
+                <outlet property="key_1_2" destination="6Tx-Ph-7kV" id="avr-n1-rrj"/>
+                <outlet property="key_1_3" destination="ga0-aP-HYu" id="id3-Ul-CQv"/>
+                <outlet property="key_1_4" destination="MVI-tU-xTS" id="d0P-5u-D2m"/>
+                <outlet property="key_1_5" destination="LMF-Sq-W9W" id="THk-f0-qcb"/>
+                <outlet property="key_2_1" destination="bRp-aJ-SNM" id="ISh-Qn-KxE"/>
+                <outlet property="key_2_2" destination="nFE-x8-h7w" id="NUl-k6-Uom"/>
+                <outlet property="key_2_3" destination="rAG-qe-MiN" id="ilz-Qg-Mnl"/>
+                <outlet property="key_2_4" destination="TSC-Yj-NZU" id="Icu-1I-393"/>
+                <outlet property="key_2_5" destination="IMC-zk-uyO" id="xkT-db-KZL"/>
+                <outlet property="key_3_1" destination="mAt-ap-mRA" id="byZ-FT-bwu"/>
+                <outlet property="key_3_2" destination="tOq-Fw-IxG" id="70Q-IK-qmZ"/>
+                <outlet property="key_3_3" destination="3iz-ZB-zmV" id="FAD-Qq-IG3"/>
+                <outlet property="key_3_4" destination="d3v-lh-CEd" id="B0E-ln-Uei"/>
+                <outlet property="key_3_5" destination="XL2-KY-AvQ" id="gb3-Ue-RpY"/>
+                <outlet property="key_4_1" destination="pOJ-l9-fnp" id="Wyv-NO-b7b"/>
+                <outlet property="key_4_2" destination="6ao-xn-FIa" id="rgx-TC-AHh"/>
+                <outlet property="key_4_3" destination="oX4-Ad-ZzW" id="pPw-T1-x6l"/>
+                <outlet property="key_4_4" destination="LkV-8M-8qb" id="KlO-NB-1Ik"/>
+                <outlet property="key_4_5" destination="G5a-99-dhl" id="bgM-3H-JgP"/>
+                <outlet property="topCenterButton" destination="tlQ-Uh-GHi" id="zOw-aq-nv8"/>
+                <outlet property="topLeftButton" destination="kxb-Ls-CKG" id="Jsk-Gx-k85"/>
+                <outlet property="topRightButton" destination="7Oa-HG-rcW" id="rN3-CO-ECf"/>
+                <outlet property="topView" destination="pb0-Rs-7bF" id="9Jh-uE-ze4"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="640" height="432"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" id="pb0-Rs-7bF">
+                    <rect key="frame" x="0.0" y="0.0" width="640" height="86"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="tlQ-Uh-GHi">
+                            <rect key="frame" x="214" y="0.0" width="212" height="86"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="topCenterClicked:" destination="-1" eventType="touchUpInside" id="rTi-Mo-CWb"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7Oa-HG-rcW">
+                            <rect key="frame" x="428" y="0.0" width="212" height="86"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="topRightClicked:" destination="-1" eventType="touchUpInside" id="8e7-YS-DCD"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kxb-Ls-CKG">
+                            <rect key="frame" x="0.0" y="0.0" width="212" height="86"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="topLeftClicked:" destination="-1" eventType="touchUpInside" id="eRQ-G0-dor"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" id="05c-bc-ucA">
+                    <rect key="frame" x="0.0" y="86" width="640" height="346"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" id="DuG-RH-5ID">
+                            <rect key="frame" x="0.0" y="2" width="128" height="86"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" tag="300" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="eGW-g4-PEl">
+                                    <rect key="frame" x="3" y="3" width="122" height="80"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="高音"/>
+                                    <connections>
+                                        <action selector="keyButton11Clicked:" destination="-1" eventType="touchUpInside" id="Ahi-tQ-0vH"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
+                        <view contentMode="scaleToFill" id="6Tx-Ph-7kV">
+                            <rect key="frame" x="128" y="2" width="128" height="86"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" tag="301" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="uYE-Ai-wCG">
+                                    <rect key="frame" x="3" y="3" width="122" height="80"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="放大"/>
+                                    <connections>
+                                        <action selector="keyButton12Clicked:" destination="-1" eventType="touchUpInside" id="bSE-iU-lf3"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.83297275640000001" green="0.83297275640000001" blue="0.83297275640000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
+                        <view contentMode="scaleToFill" id="MVI-tU-xTS">
+                            <rect key="frame" x="384" y="2" width="128" height="86"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" tag="303" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="LZ2-dh-9GK">
+                                    <rect key="frame" x="3" y="3" width="122" height="80"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="收起"/>
+                                    <connections>
+                                        <action selector="keyButton14Clicked:" destination="-1" eventType="touchUpInside" id="79n-3o-dVN"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.83297275640000001" green="0.83297275640000001" blue="0.83297275640000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
+                        <view contentMode="scaleToFill" id="ga0-aP-HYu">
+                            <rect key="frame" x="256" y="2" width="128" height="86"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" tag="302" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hCi-10-hya">
+                                    <rect key="frame" x="3" y="3" width="122" height="80"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="缩小"/>
+                                    <connections>
+                                        <action selector="keyButton13Clicked:" destination="-1" eventType="touchUpInside" id="VYT-3M-yNv"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
+                        <view contentMode="scaleToFill" id="nFE-x8-h7w">
+                            <rect key="frame" x="128" y="86" width="128" height="86"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" tag="306" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bum-4w-jl2">
+                                    <rect key="frame" x="3" y="3" width="122" height="80"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="1"/>
+                                    <connections>
+                                        <action selector="keyButton22Clicked:" destination="-1" eventType="touchUpInside" id="VAV-gb-N4A"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
+                        <view contentMode="scaleToFill" id="LMF-Sq-W9W">
+                            <rect key="frame" x="512" y="2" width="128" height="86"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" tag="304" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vcb-bQ-9Dg">
+                                    <rect key="frame" x="3" y="3" width="122" height="80"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="原调："/>
+                                    <connections>
+                                        <action selector="keyButton15Clicked:" destination="-1" eventType="touchUpInside" id="iw1-Dv-CLI"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
+                        <view contentMode="scaleToFill" id="bRp-aJ-SNM">
+                            <rect key="frame" x="0.0" y="86" width="128" height="86"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" tag="305" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Cps-d3-f9f">
+                                    <rect key="frame" x="3" y="3" width="122" height="80"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="中音"/>
+                                    <connections>
+                                        <action selector="keyButton21Clicked:" destination="-1" eventType="touchUpInside" id="ohm-wG-KJH"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.83297275640000001" green="0.83297275640000001" blue="0.83297275640000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
+                        <view contentMode="scaleToFill" id="rAG-qe-MiN">
+                            <rect key="frame" x="256" y="86" width="128" height="86"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" tag="307" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="jxj-Js-4BE">
+                                    <rect key="frame" x="3" y="3" width="122" height="80"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="2"/>
+                                    <connections>
+                                        <action selector="keyButton23Clicked:" destination="-1" eventType="touchUpInside" id="GRD-KR-Wdr"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.83297275640000001" green="0.83297275640000001" blue="0.83297275640000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
+                        <view contentMode="scaleToFill" id="tOq-Fw-IxG">
+                            <rect key="frame" x="128" y="172" width="128" height="86"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" tag="311" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="MGE-xQ-Oza">
+                                    <rect key="frame" x="3" y="3" width="122" height="80"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="4"/>
+                                    <connections>
+                                        <action selector="keyButton32Clicked:" destination="-1" eventType="touchUpInside" id="V29-jH-gbU"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.83297275640000001" green="0.83297275640000001" blue="0.83297275640000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
+                        <view contentMode="scaleToFill" id="IMC-zk-uyO">
+                            <rect key="frame" x="512" y="86" width="128" height="86"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" tag="309" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ZhX-Sd-hfG">
+                                    <rect key="frame" x="3" y="3" width="122" height="80"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="目标："/>
+                                    <connections>
+                                        <action selector="keyButton25Clicked:" destination="-1" eventType="touchUpInside" id="BK7-hr-PXd"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.83297275640000001" green="0.83297275640000001" blue="0.83297275640000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
+                        <view contentMode="scaleToFill" id="TSC-Yj-NZU">
+                            <rect key="frame" x="384" y="86" width="128" height="86"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" tag="308" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2b5-ir-omd">
+                                    <rect key="frame" x="3" y="3" width="122" height="80"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="3"/>
+                                    <connections>
+                                        <action selector="keyButton24Clicked:" destination="-1" eventType="touchUpInside" id="nid-XB-lSC"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
+                        <view contentMode="scaleToFill" id="3iz-ZB-zmV">
+                            <rect key="frame" x="256" y="172" width="128" height="86"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" tag="312" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hw3-w1-9rE">
+                                    <rect key="frame" x="3" y="3" width="122" height="80"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="5"/>
+                                    <connections>
+                                        <action selector="keyButton33Clicked:" destination="-1" eventType="touchUpInside" id="jD4-KC-H30"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
+                        <view contentMode="scaleToFill" id="mAt-ap-mRA">
+                            <rect key="frame" x="0.0" y="172" width="128" height="86"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" tag="310" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="sxG-pN-TPn">
+                                    <rect key="frame" x="3" y="3" width="122" height="80"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="低音"/>
+                                    <connections>
+                                        <action selector="keyButton31Clicked:" destination="-1" eventType="touchUpInside" id="5fL-8r-9b4"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
+                        <view contentMode="scaleToFill" id="pOJ-l9-fnp">
+                            <rect key="frame" x="0.0" y="256" width="128" height="86"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" tag="315" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="HMD-vE-aI3">
+                                    <rect key="frame" x="3" y="3" width="122" height="80"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="存稿"/>
+                                    <connections>
+                                        <action selector="keyButton41Clicked:" destination="-1" eventType="touchUpInside" id="uwr-x5-LnX"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.83297275640000001" green="0.83297275640000001" blue="0.83297275640000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
+                        <view contentMode="scaleToFill" id="oX4-Ad-ZzW">
+                            <rect key="frame" x="256" y="256" width="128" height="86"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" tag="317" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="I9T-9a-WOi">
+                                    <rect key="frame" x="3" y="3" width="122" height="80"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="换行"/>
+                                    <connections>
+                                        <action selector="keyButton43Clicked:" destination="-1" eventType="touchUpInside" id="ixj-VI-W1h"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.83297275640000001" green="0.83297275640000001" blue="0.83297275640000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
+                        <view contentMode="scaleToFill" id="d3v-lh-CEd">
+                            <rect key="frame" x="384" y="172" width="128" height="86"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" tag="313" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3hM-Tg-zbe">
+                                    <rect key="frame" x="3" y="3" width="122" height="80"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="6"/>
+                                    <connections>
+                                        <action selector="keyButton34Clicked:" destination="-1" eventType="touchUpInside" id="Mfp-db-FXn"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.83297275640000001" green="0.83297275640000001" blue="0.83297275640000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
+                        <view contentMode="scaleToFill" id="G5a-99-dhl">
+                            <rect key="frame" x="512" y="256" width="128" height="86"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" tag="319" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hMT-gD-GSU">
+                                    <rect key="frame" x="3" y="3" width="122" height="80"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="转换"/>
+                                    <connections>
+                                        <action selector="keyButton45Clicked:" destination="-1" eventType="touchUpInside" id="iEy-d6-YJA"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.83297275640000001" green="0.83297275640000001" blue="0.83297275640000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
+                        <view contentMode="scaleToFill" id="LkV-8M-8qb">
+                            <rect key="frame" x="384" y="256" width="128" height="86"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" tag="318" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Vi8-ib-aTj">
+                                    <rect key="frame" x="3" y="3" width="122" height="80"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="#"/>
+                                    <connections>
+                                        <action selector="keyButton44Clicked:" destination="-1" eventType="touchUpInside" id="wWp-6Y-ZqL"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
+                        <view contentMode="scaleToFill" id="XL2-KY-AvQ">
+                            <rect key="frame" x="512" y="172" width="128" height="86"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" tag="314" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RQL-sc-dej">
+                                    <rect key="frame" x="3" y="3" width="122" height="80"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="空格"/>
+                                    <connections>
+                                        <action selector="keyButton35Clicked:" destination="-1" eventType="touchUpInside" id="lrA-46-Lyb"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
+                        <view contentMode="scaleToFill" id="6ao-xn-FIa">
+                            <rect key="frame" x="128" y="256" width="128" height="86"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" tag="316" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5Iy-Wn-gmi">
+                                    <rect key="frame" x="3" y="3" width="122" height="80"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="7"/>
+                                    <connections>
+                                        <action selector="keyButton42Clicked:" destination="-1" eventType="touchUpInside" id="Pmm-SX-MKn"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.83297275640000001" green="0.83297275640000001" blue="0.83297275640000001" alpha="1" colorSpace="calibratedRGB"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="729" y="588"/>
+        </view>
+    </objects>
+</document>

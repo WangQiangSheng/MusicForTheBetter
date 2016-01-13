@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2535D4AD1C439B48001B289F /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2535D4AC1C439B48001B289F /* libxml2.2.tbd */; };
+		2535D4AF1C439B5B001B289F /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2535D4AE1C439B5B001B289F /* libsqlite3.tbd */; };
+		2535D4B21C439B83001B289F /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2535D4B11C439B83001B289F /* MediaPlayer.framework */; };
+		2535D4B41C439B8B001B289F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2535D4B31C439B8B001B289F /* AVFoundation.framework */; };
+		2535D4C81C43B0CB001B289F /* WQSChagePitchStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2535D4C71C43B0CB001B289F /* WQSChagePitchStringViewController.m */; };
+		2535D4CD1C43B5E8001B289F /* WQSKeyBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2535D4CB1C43B5E8001B289F /* WQSKeyBoardViewController.m */; };
+		2535D4CE1C43B5E8001B289F /* WQSKeyBoardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2535D4CC1C43B5E8001B289F /* WQSKeyBoardViewController.xib */; };
 		2591634B1C438CF50044942E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2591634A1C438CF50044942E /* main.m */; };
 		2591634E1C438CF50044942E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2591634D1C438CF50044942E /* AppDelegate.m */; };
 		259163511C438CF50044942E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 259163501C438CF50044942E /* ViewController.m */; };
@@ -15,6 +22,16 @@
 		2591635C1C438CF50044942E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2591635A1C438CF50044942E /* LaunchScreen.storyboard */; };
 		259163671C438CF50044942E /* MusicForTheBetterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 259163661C438CF50044942E /* MusicForTheBetterTests.m */; };
 		259163721C438CF50044942E /* MusicForTheBetterUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 259163711C438CF50044942E /* MusicForTheBetterUITests.m */; };
+		25D93EFB1C45B081002C0AC6 /* VC_backimage.png in Resources */ = {isa = PBXBuildFile; fileRef = 25D93EF31C45B081002C0AC6 /* VC_backimage.png */; };
+		25D93EFC1C45B081002C0AC6 /* VC_caidan.png in Resources */ = {isa = PBXBuildFile; fileRef = 25D93EF41C45B081002C0AC6 /* VC_caidan.png */; };
+		25D93EFD1C45B081002C0AC6 /* VC_chakan.png in Resources */ = {isa = PBXBuildFile; fileRef = 25D93EF51C45B081002C0AC6 /* VC_chakan.png */; };
+		25D93EFE1C45B081002C0AC6 /* VC_guanyu.png in Resources */ = {isa = PBXBuildFile; fileRef = 25D93EF61C45B081002C0AC6 /* VC_guanyu.png */; };
+		25D93EFF1C45B081002C0AC6 /* VC_helper.png in Resources */ = {isa = PBXBuildFile; fileRef = 25D93EF71C45B081002C0AC6 /* VC_helper.png */; };
+		25D93F001C45B081002C0AC6 /* VC_luyin.png in Resources */ = {isa = PBXBuildFile; fileRef = 25D93EF81C45B081002C0AC6 /* VC_luyin.png */; };
+		25D93F011C45B081002C0AC6 /* VC_sousou.png in Resources */ = {isa = PBXBuildFile; fileRef = 25D93EF91C45B081002C0AC6 /* VC_sousou.png */; };
+		25D93F021C45B081002C0AC6 /* VC_zhuanpu.png in Resources */ = {isa = PBXBuildFile; fileRef = 25D93EFA1C45B081002C0AC6 /* VC_zhuanpu.png */; };
+		25D93F041C45B0B6002C0AC6 /* VC_fusheng.png in Resources */ = {isa = PBXBuildFile; fileRef = 25D93F031C45B0B6002C0AC6 /* VC_fusheng.png */; };
+		25D93F071C45B1EA002C0AC6 /* WQSChangeMusicString.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D93F061C45B1EA002C0AC6 /* WQSChangeMusicString.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +52,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2535D4AC1C439B48001B289F /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
+		2535D4AE1C439B5B001B289F /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		2535D4B11C439B83001B289F /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		2535D4B31C439B8B001B289F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		2535D4B51C439CED001B289F /* WQSConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WQSConstant.h; sourceTree = "<group>"; };
+		2535D4C61C43B0CB001B289F /* WQSChagePitchStringViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WQSChagePitchStringViewController.h; sourceTree = "<group>"; };
+		2535D4C71C43B0CB001B289F /* WQSChagePitchStringViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WQSChagePitchStringViewController.m; sourceTree = "<group>"; };
+		2535D4CA1C43B5E8001B289F /* WQSKeyBoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WQSKeyBoardViewController.h; sourceTree = "<group>"; };
+		2535D4CB1C43B5E8001B289F /* WQSKeyBoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WQSKeyBoardViewController.m; sourceTree = "<group>"; };
+		2535D4CC1C43B5E8001B289F /* WQSKeyBoardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WQSKeyBoardViewController.xib; sourceTree = "<group>"; };
 		259163461C438CF50044942E /* MusicForTheBetter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicForTheBetter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2591634A1C438CF50044942E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2591634C1C438CF50044942E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,6 +78,17 @@
 		2591636D1C438CF50044942E /* MusicForTheBetterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicForTheBetterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		259163711C438CF50044942E /* MusicForTheBetterUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MusicForTheBetterUITests.m; sourceTree = "<group>"; };
 		259163731C438CF50044942E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		25D93EF31C45B081002C0AC6 /* VC_backimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VC_backimage.png; sourceTree = "<group>"; };
+		25D93EF41C45B081002C0AC6 /* VC_caidan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VC_caidan.png; sourceTree = "<group>"; };
+		25D93EF51C45B081002C0AC6 /* VC_chakan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VC_chakan.png; sourceTree = "<group>"; };
+		25D93EF61C45B081002C0AC6 /* VC_guanyu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VC_guanyu.png; sourceTree = "<group>"; };
+		25D93EF71C45B081002C0AC6 /* VC_helper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VC_helper.png; sourceTree = "<group>"; };
+		25D93EF81C45B081002C0AC6 /* VC_luyin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VC_luyin.png; sourceTree = "<group>"; };
+		25D93EF91C45B081002C0AC6 /* VC_sousou.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VC_sousou.png; sourceTree = "<group>"; };
+		25D93EFA1C45B081002C0AC6 /* VC_zhuanpu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VC_zhuanpu.png; sourceTree = "<group>"; };
+		25D93F031C45B0B6002C0AC6 /* VC_fusheng.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VC_fusheng.png; sourceTree = "<group>"; };
+		25D93F051C45B1EA002C0AC6 /* WQSChangeMusicString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WQSChangeMusicString.h; sourceTree = "<group>"; };
+		25D93F061C45B1EA002C0AC6 /* WQSChangeMusicString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WQSChangeMusicString.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +96,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2535D4B41C439B8B001B289F /* AVFoundation.framework in Frameworks */,
+				2535D4B21C439B83001B289F /* MediaPlayer.framework in Frameworks */,
+				2535D4AF1C439B5B001B289F /* libsqlite3.tbd in Frameworks */,
+				2535D4AD1C439B48001B289F /* libxml2.2.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,9 +120,93 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2535D4A51C439B1F001B289F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2535D4C91C43B0E2001B289F /* 音符转换页面 */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2535D4A61C439B1F001B289F /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				2535D4B51C439CED001B289F /* WQSConstant.h */,
+				25D93F051C45B1EA002C0AC6 /* WQSChangeMusicString.h */,
+				25D93F061C45B1EA002C0AC6 /* WQSChangeMusicString.m */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		2535D4A71C439B1F001B289F /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				25D93F031C45B0B6002C0AC6 /* VC_fusheng.png */,
+				25D93EF31C45B081002C0AC6 /* VC_backimage.png */,
+				25D93EF41C45B081002C0AC6 /* VC_caidan.png */,
+				25D93EF51C45B081002C0AC6 /* VC_chakan.png */,
+				25D93EF61C45B081002C0AC6 /* VC_guanyu.png */,
+				25D93EF71C45B081002C0AC6 /* VC_helper.png */,
+				25D93EF81C45B081002C0AC6 /* VC_luyin.png */,
+				25D93EF91C45B081002C0AC6 /* VC_sousou.png */,
+				25D93EFA1C45B081002C0AC6 /* VC_zhuanpu.png */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		2535D4A81C439B1F001B289F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2535D4A91C439B1F001B289F /* Other */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		2535D4AA1C439B1F001B289F /* ThirdPath */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ThirdPath;
+			sourceTree = "<group>";
+		};
+		2535D4AB1C439B1F001B289F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				25D93F081C45B315002C0AC6 /* 音符转换页面 */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2535D4B01C439B66001B289F /* System */ = {
+			isa = PBXGroup;
+			children = (
+				2535D4B11C439B83001B289F /* MediaPlayer.framework */,
+				2535D4B31C439B8B001B289F /* AVFoundation.framework */,
+				2535D4AC1C439B48001B289F /* libxml2.2.tbd */,
+				2535D4AE1C439B5B001B289F /* libsqlite3.tbd */,
+			);
+			name = System;
+			sourceTree = "<group>";
+		};
+		2535D4C91C43B0E2001B289F /* 音符转换页面 */ = {
+			isa = PBXGroup;
+			children = (
+				2535D4C61C43B0CB001B289F /* WQSChagePitchStringViewController.h */,
+				2535D4C71C43B0CB001B289F /* WQSChagePitchStringViewController.m */,
+			);
+			name = "音符转换页面";
+			sourceTree = "<group>";
+		};
 		2591633D1C438CF50044942E = {
 			isa = PBXGroup;
 			children = (
+				2535D4B01C439B66001B289F /* System */,
 				259163481C438CF50044942E /* MusicForTheBetter */,
 				259163651C438CF50044942E /* MusicForTheBetterTests */,
 				259163701C438CF50044942E /* MusicForTheBetterUITests */,
@@ -105,6 +231,13 @@
 				2591634D1C438CF50044942E /* AppDelegate.m */,
 				2591634F1C438CF50044942E /* ViewController.h */,
 				259163501C438CF50044942E /* ViewController.m */,
+				2535D4A51C439B1F001B289F /* Controller */,
+				2535D4A61C439B1F001B289F /* Helper */,
+				2535D4A71C439B1F001B289F /* Image */,
+				2535D4A81C439B1F001B289F /* Model */,
+				2535D4A91C439B1F001B289F /* Other */,
+				2535D4AA1C439B1F001B289F /* ThirdPath */,
+				2535D4AB1C439B1F001B289F /* View */,
 				259163581C438CF50044942E /* Assets.xcassets */,
 				2591635A1C438CF50044942E /* LaunchScreen.storyboard */,
 				2591635D1C438CF50044942E /* Info.plist */,
@@ -138,6 +271,16 @@
 				259163731C438CF50044942E /* Info.plist */,
 			);
 			path = MusicForTheBetterUITests;
+			sourceTree = "<group>";
+		};
+		25D93F081C45B315002C0AC6 /* 音符转换页面 */ = {
+			isa = PBXGroup;
+			children = (
+				2535D4CA1C43B5E8001B289F /* WQSKeyBoardViewController.h */,
+				2535D4CB1C43B5E8001B289F /* WQSKeyBoardViewController.m */,
+				2535D4CC1C43B5E8001B289F /* WQSKeyBoardViewController.xib */,
+			);
+			name = "音符转换页面";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,6 +350,7 @@
 				TargetAttributes = {
 					259163451C438CF50044942E = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 2ZWX2Y5YJ6;
 					};
 					259163611C438CF50044942E = {
 						CreatedOnToolsVersion = 7.2;
@@ -243,8 +387,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25D93F011C45B081002C0AC6 /* VC_sousou.png in Resources */,
+				25D93EFD1C45B081002C0AC6 /* VC_chakan.png in Resources */,
+				25D93F001C45B081002C0AC6 /* VC_luyin.png in Resources */,
+				25D93EFE1C45B081002C0AC6 /* VC_guanyu.png in Resources */,
 				2591635C1C438CF50044942E /* LaunchScreen.storyboard in Resources */,
+				25D93EFF1C45B081002C0AC6 /* VC_helper.png in Resources */,
+				25D93F021C45B081002C0AC6 /* VC_zhuanpu.png in Resources */,
 				259163591C438CF50044942E /* Assets.xcassets in Resources */,
+				2535D4CE1C43B5E8001B289F /* WQSKeyBoardViewController.xib in Resources */,
+				25D93F041C45B0B6002C0AC6 /* VC_fusheng.png in Resources */,
+				25D93EFC1C45B081002C0AC6 /* VC_caidan.png in Resources */,
+				25D93EFB1C45B081002C0AC6 /* VC_backimage.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,9 +424,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				259163511C438CF50044942E /* ViewController.m in Sources */,
+				25D93F071C45B1EA002C0AC6 /* WQSChangeMusicString.m in Sources */,
 				259163571C438CF50044942E /* MusicForTheBetter.xcdatamodeld in Sources */,
 				2591634E1C438CF50044942E /* AppDelegate.m in Sources */,
 				2591634B1C438CF50044942E /* main.m in Sources */,
+				2535D4C81C43B0CB001B289F /* WQSChagePitchStringViewController.m in Sources */,
+				2535D4CD1C43B5E8001B289F /* WQSKeyBoardViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,10 +562,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MusicForTheBetter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.meiyou.MusicForTheBetter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -416,10 +576,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MusicForTheBetter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.meiyou.MusicForTheBetter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -490,6 +653,7 @@
 				259163781C438CF50044942E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		259163791C438CF50044942E /* Build configuration list for PBXNativeTarget "MusicForTheBetterTests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +662,7 @@
 				2591637B1C438CF50044942E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2591637C1C438CF50044942E /* Build configuration list for PBXNativeTarget "MusicForTheBetterUITests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +671,7 @@
 				2591637E1C438CF50044942E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
