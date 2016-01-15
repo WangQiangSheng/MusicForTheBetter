@@ -15,10 +15,6 @@
 //转调主页面……
 @property (nonatomic,strong) WQSChagePitchStringViewController * changePitchStringVC;
 
-@property (weak, nonatomic) IBOutlet UIView *topView;
-@property (weak, nonatomic) IBOutlet UIButton *topLeftButton;
-@property (weak, nonatomic) IBOutlet UIButton *topCenterButton;
-@property (weak, nonatomic) IBOutlet UIButton *topRightButton;
 
 @property (weak, nonatomic) IBOutlet UIView *keyBoardCenterView;
 

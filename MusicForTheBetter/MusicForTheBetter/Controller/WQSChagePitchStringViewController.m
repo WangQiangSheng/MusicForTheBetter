@@ -18,10 +18,8 @@
 #import "WQSChangeMusicString.h"
 
 
-@interface WQSChagePitchStringViewController ()
+@interface WQSChagePitchStringViewController () <UIPickerViewDataSource,UIPickerViewDelegate>
 
-//中间的输入TEXTVIEW
-@property (nonatomic,strong) UITextView * centerTextView;
 
 //定制键盘
 @property (nonatomic,strong) UIView * keyBoardView;
@@ -34,6 +32,42 @@
 
 //目标调性
 @property (nonatomic,strong) NSString * picthNew;
+
+//选择原调性和目标调性
+@property (nonatomic,strong) UIPickerView * pitchSelectView;
+
+//输入时键盘上方的视图
+@property (nonatomic,strong) UIView * accessoryInputView;
+
+//选调时键盘上方的视图
+@property (nonatomic,strong) UIView * accessoryPitchView;
+
+//选调数据源
+@property (nonatomic,strong) NSArray * pitchArrayData;
+
+
+//自定义输入键盘，键盘的头视图
+@property (nonatomic,strong) UIButton * inputButton1;
+@property (nonatomic,strong) UIButton * inputButton2;
+@property (nonatomic,strong) UIButton * inputButton3;
+@property (nonatomic,strong) UIButton * inputButton4;
+
+//自定义选调键盘，键盘的头视图
+@property (nonatomic,strong) UIButton * pitchButton1;
+@property (nonatomic,strong) UIButton * pitchButton2;
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
 
 @end
 
@@ -52,7 +86,7 @@
 
 -(void)keyBoardWillShow{
     [UIView animateWithDuration:0.25f animations:^{
-        self.centerTextView.frame = CGRectMake(0, 64, ScreenWidth, ScreenHeight-64-216);
+        self.centerTextView.frame = CGRectMake(0, 64, ScreenWidth, ScreenHeight-64-216-54);
     }];
 }
 
@@ -71,14 +105,15 @@
 #pragma mark - 创建视图以及初始化数据
 -(void)viewDidLoad{
     [super viewDidLoad];
-    
     [self initData];
     [self createView];
     [self createNavationBarItems];
 }
 
 -(void)initData{
-    
+    NSArray * oldPitch = @[@"A",@"#A",@"B",@"C",@"#C",@"D",@"#D",@"E",@"F",@"#F",@"G",@"#G"];
+    NSArray * newPitch = @[@"A",@"#A",@"B",@"C",@"#C",@"D",@"#D",@"E",@"F",@"#F",@"G",@"#G"];
+    self.pitchArrayData = @[oldPitch,newPitch];
 }
 
 -(void)createView{
@@ -88,14 +123,59 @@
     
     self.centerTextView = [[UITextView alloc]initWithFrame:CGRectMake(0, 64,ScreenWidth , ScreenHeight-64)];
     self.centerTextView.backgroundColor = [UIColor lightGrayColor];
+    //创建键盘上方的视图
+    [self createInputTopView];
+    
     WQSKeyBoardViewController * keyBoardVC = [[WQSKeyBoardViewController alloc]init];
     keyBoardVC.changePitchStringVC = self;
     [self addChildViewController:keyBoardVC];
     self.centerTextView.inputView = keyBoardVC.view;
-    
+    self.centerTextView.inputAccessoryView = self.accessoryInputView;
     [self.view addSubview:self.centerTextView];
     
+    self.pitchSelectView = [[UIPickerView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 216)];
+    self.pitchSelectView.delegate = self;
+    self.pitchSelectView.dataSource = self;
+    self.pitchSelectView.backgroundColor = [UIColor whiteColor];
+
+
 }
+
+-(void)createInputTopView{
+    
+    self.accessoryInputView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 54)];
+    self.accessoryInputView.backgroundColor = [UIColor whiteColor];
+    self.inputButton1 = [UIButton buttonWithType:UIButtonTypeSystem];
+    self.inputButton1.tag = 400;
+    [self.accessoryInputView addSubview:self.inputButton1];
+    self.inputButton2 = [UIButton buttonWithType:UIButtonTypeSystem];
+    self.inputButton2.tag = 401;
+    [self.accessoryInputView addSubview:self.inputButton2];
+    self.inputButton3 = [UIButton buttonWithType:UIButtonTypeSystem];
+    self.inputButton3.tag = 402;
+    [self.accessoryInputView addSubview:self.inputButton3];
+    self.inputButton4 = [UIButton buttonWithType:UIButtonTypeSystem];
+    self.inputButton4.tag = 403;
+    [self.accessoryInputView addSubview:self.inputButton4];
+    
+    for (NSInteger i = 400 ; i < 404 ; i++ ) {
+        UIButton * button = (UIButton *)[self.accessoryInputView viewWithTag:i];
+        button.frame = CGRectMake((i-400)*ScreenWidth/4.0, 5, ScreenWidth/4.0, 40);
+        [button addTarget:self action:@selector(inputViewButtonClicked) forControlEvents:UIControlEventTouchUpInside];
+        [button setTitle:[NSString stringWithFormat:@"%ld",i] forState:UIControlStateNormal];
+    }
+    
+    self.accessoryPitchView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 54)];
+    
+    
+    
+    
+}
+
+-(void)inputViewButtonClicked{
+    
+}
+
 
 -(void)createNavationBarItems{
     
@@ -141,17 +221,37 @@
 
 
 
+#pragma mark - 选调相关代理 - UIPickerViewDataSource
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
+    return [self.pitchArrayData count];
+}
 
+-(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
+    if(component == 0){
+        return [[self.pitchArrayData objectAtIndex:component] count];
+    }else{
+        return [[self.pitchArrayData objectAtIndex:component] count];
+    }
+}
 
+#pragma mark - 选调相关代理 - UIPickerViewDelegate
+-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+//    return [[self.pitchArrayData objectAtIndex:component] objectAtIndex:row];
+    if(component == 0){
+        return [NSString stringWithFormat:@"原调：%@",[[self.pitchArrayData objectAtIndex:component] objectAtIndex:row]];
+    }else{
+        return [NSString stringWithFormat:@"目标：%@",[[self.pitchArrayData objectAtIndex:component] objectAtIndex:row]];;
+    }
 
+}
 
-
-
-
-
-
-
-
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+    if(component == 0){
+        self.pitchOld = [[self.pitchArrayData objectAtIndex:0] objectAtIndex:row];
+    }else{
+        self.picthNew = [[self.pitchArrayData objectAtIndex:1] objectAtIndex:row];
+    }
+}
 
 
 

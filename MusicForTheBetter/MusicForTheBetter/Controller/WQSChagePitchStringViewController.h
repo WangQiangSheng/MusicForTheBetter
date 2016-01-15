@@ -12,6 +12,8 @@
 
 
 
+//中间的输入TEXTVIEW
+@property (nonatomic,strong) UITextView * centerTextView;
 
 
 
