@@ -10,11 +10,16 @@
 
 #import "WQSChagePitchStringViewController.h"
 
+@class WQSChagePitchStringViewController;
+
 @interface WQSKeyBoardViewController : UIViewController
 
 //转调主页面……
-@property (nonatomic,strong) WQSChagePitchStringViewController * changePitchStringVC;
+@property (nonatomic,retain) WQSChagePitchStringViewController * changePitchStringVC;
 
+//原调性、目标调性
+@property (nonatomic,strong) NSString * pitchOld;
+@property (nonatomic,strong) NSString * pitchNew;
 
 @property (weak, nonatomic) IBOutlet UIView *keyBoardCenterView;
 
@@ -58,5 +63,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *keyButton43;
 @property (weak, nonatomic) IBOutlet UIButton *keyButton44;
 @property (weak, nonatomic) IBOutlet UIButton *keyButton45;
+
+
+- (IBAction)keyButton14Clicked:(id)sender ;
 
 @end

@@ -24,9 +24,6 @@ static NSArray * NOTE = nil;
 
 +(NSString *)changeFromPitch:(NSString *)oldPitch ToPitch:(NSString *)newPitch byTextString:(NSString *)text{
     
-    NSLog(@"old = %@   ,   new = %@ ",oldPitch,newPitch);
-    
-    
     //可供选择的原调性和目标调性
     PITCH = @[@"A",@"#A",@"B",@"C",@"#C",@"D",@"#D",@"E",@"F",@"#F",@"G",@"#G"];
     
@@ -61,14 +58,6 @@ static NSArray * NOTE = nil;
     //此处是保证原调性和目标调性差距不会太大，比如中音C调转换为B调时，不会转换成高音的B调
     distance = oldNumber- newNumber ;
     
-    NSLog(@"KKKKK          %ld",distance);
-    
-//    if(distance > 6){
-//        distance = distance - 12;
-//    }else if(distance < -6){
-//        distance = distance + 12;
-//    }
-    
     NSString * myTempString = text;
     int flag = 1;
     
@@ -102,8 +91,6 @@ static NSArray * NOTE = nil;
         //处理倍低音情况的转调
         if('{' == [myTempString characterAtIndex:i]){
             
-            //    NSLog(@"倍低音……\n");
-            
             //获取接下来第一个”}“出现的位置，因为{}成对出现，所以有{，接下来肯定会有}
             NSRange range = [myTempString rangeOfString:@"}"];
             
@@ -135,8 +122,6 @@ static NSArray * NOTE = nil;
         
         else if('(' == [myTempString characterAtIndex:i]){
             
-            //    NSLog(@"低音……\n");
-            
             //获取接下来第一个”)“出现的位置，因为()成对出现，所以有(，接下来肯定会有)
             NSRange range = [myTempString rangeOfString:@")"];
             
@@ -167,9 +152,7 @@ static NSArray * NOTE = nil;
         
         
         else if('[' == [myTempString characterAtIndex:i]){
-            
-            //      NSLog(@"高音……\n");
-            
+
             //获取接下来第一个”]“出现的位置，因为[]成对出现，所以有[，接下来肯定会有]
             NSRange range = [myTempString rangeOfString:@"]"];
             
@@ -201,8 +184,6 @@ static NSArray * NOTE = nil;
         else{
             if('#' == [myTempString characterAtIndex:i] ){
                 
-                //      NSLog(@"普通伴音……\n");
-                
                 getItem = [NSString stringWithFormat:@"%c%c",[myTempString characterAtIndex:i],[myTempString characterAtIndex:i+1]];
                 
                 myTempString = [myTempString substringFromIndex:i+1];
@@ -226,8 +207,6 @@ static NSArray * NOTE = nil;
                 }
             }else{
                 
-                //    NSLog(@"普通音……\n");
-                
                 getItem = [myTempString substringWithRange:NSMakeRange(i, 1)];
                 
                 myTempString = [myTempString substringFromIndex:i+1];
@@ -238,15 +217,10 @@ static NSArray * NOTE = nil;
                 //在NOTO数组中比对当前调，并加上其偏移，即得到目标调的字符串
                 for(NSInteger j = 0 ; j < NOTE.count ; j++){
                     if([[NSString stringWithFormat:@"%@",getItem] isEqualToString:[NOTE objectAtIndex:j]]){
-                        
-                        NSLog(@"diatance   =  %ld",distance);
-                        
+
                         NSInteger target = j + distance;
                         flag = 1;
-                        
-                        
-                        NSLog(@"target  =   %ld",target);
-                        
+
                         //合法性判断，如果髠调性超出可转范围则返回一个“ERROR”字符
                         if(target > 48 ){
                             return @"-1";
@@ -264,10 +238,7 @@ static NSArray * NOTE = nil;
                 if(flag == 0){
                     [NEEDSTRING appendString:getItem];
                 }
-                
-                NSLog(@"%d..........",flag);
-                NSLog(@"%@",getItem);
-                
+
             }
             
         }

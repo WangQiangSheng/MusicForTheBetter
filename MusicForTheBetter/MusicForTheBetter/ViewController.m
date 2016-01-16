@@ -49,19 +49,20 @@
 
 //初始化数据
 -(void)initData{
-    self.titleArr = @[@"转谱",@"查看",@"录音",@"搜索",@"帮助",@"关于"];
-    self.num = @[@(POINT_X),                     @(POINT_Y - r),
-             @(POINT_X + r*sin(18/180.0 * M_PI)),             @(POINT_Y - r*cos(18/180.0 * M_PI)),
-             @(POINT_X + r*sin(36/180.0 * M_PI)),             @(POINT_Y - r*cos(36/180.0 * M_PI)),
-             @(POINT_X + r*sin(54/180.0 * M_PI)),             @(POINT_Y - r*cos(54/180.0 * M_PI)),
-             @(POINT_X + r*sin(72/180.0 * M_PI)),             @(POINT_Y - r*cos(72/180.0 * M_PI)),
-             @(POINT_X + r),                     @(POINT_Y)];
+//    self.titleArr = @[@"转谱",@"查看",@"录音",@"搜索",@"帮助",@"关于"];
+    self.titleArr = @[@"",@"",@"",@"",@"",@""];
+    self.num = @[@(POINT_X),                                      @(POINT_Y - r),
+                 @(POINT_X + r*sin(18/180.0 * M_PI)),             @(POINT_Y - r*cos(18/180.0 * M_PI)),
+                 @(POINT_X + r*sin(36/180.0 * M_PI)),             @(POINT_Y - r*cos(36/180.0 * M_PI)),
+                 @(POINT_X + r*sin(54/180.0 * M_PI)),             @(POINT_Y - r*cos(54/180.0 * M_PI)),
+                 @(POINT_X + r*sin(72/180.0 * M_PI)),             @(POINT_Y - r*cos(72/180.0 * M_PI)),
+                 @(POINT_X + r),                                  @(POINT_Y)];
     
-    NSLog(@"POINT_X:%lf        POINTF_Y:%lf      R:%lf",POINT_X,POINT_Y,r);
-    
-    for (int i = 0 ; i < 6 ; i++) {
-        NSLog(@"X_:%lf        Y_:%lf",[[self.num objectAtIndex:i*2] floatValue],[[self.num objectAtIndex:i*2+1] floatValue]);
-    }
+//    NSLog(@"POINT_X:%lf        POINTF_Y:%lf      R:%lf",POINT_X,POINT_Y,r);
+//    
+//    for (int i = 0 ; i < 6 ; i++) {
+//        NSLog(@"X_:%lf        Y_:%lf",[[self.num objectAtIndex:i*2] floatValue],[[self.num objectAtIndex:i*2+1] floatValue]);
+//    }
 
 }
 
@@ -87,7 +88,6 @@
     self.button = [UIButton buttonWithType:UIButtonTypeCustom];
     self.button.frame = CGRectMake(0,0, [UIScreen mainScreen].bounds.size.width/4.0, [UIScreen mainScreen].bounds.size.width/4.0);
     [self.button addTarget:self action:@selector(menuButtonDidChicked) forControlEvents:UIControlEventTouchUpInside];
-    
     [self.button setBackgroundColor:RGBA(127, 252, 80, 0.3)];
     self.button.center = CGPointMake(Left,ScreenHeight - Bottom);
     NSString * path = [[NSBundle mainBundle]pathForResource:@"VC_caidan.png" ofType:UIControlStateNormal];
@@ -104,7 +104,7 @@
 
 //创建按钮
 -(void)createButtons{
-    self.titleArr = @[@"转谱",@"查看",@"欣赏",@"搜索",@"学习",@"关于"];
+    self.titleArr = @[@"",@"",@"",@"",@"",@""];
     NSArray * arr = @[@"VC_zhuanpu.png",@"VC_chakan.png",@"VC_luyin.png",@"VC_sousou.png",@"VC_helper.png",@"VC_guanyu.png"];
     for (int i = 0; i < 6; i++) {
         UIButton * but = [UIButton buttonWithType:UIButtonTypeCustom];
