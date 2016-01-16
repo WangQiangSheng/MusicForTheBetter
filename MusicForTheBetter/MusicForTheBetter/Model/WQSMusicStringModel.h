@@ -9,7 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface WQSMusicStringModel : NSObject
-//create table if not exists MusicString (id integer primary key autoincrement , title varchar[100] , numbersstring varchar[4000], time varchar[100]
+
+
 
 //数据表的主键
 @property (nonatomic,strong) NSString * id;
@@ -22,5 +23,12 @@
 
 //存贮转调谱子的时间
 @property (nonatomic,strong) NSString * time;
+
+//用户的昵称（名字）
+@property (nonatomic,strong) NSString * username;
+
+//用户的电话号码（账号）
+@property (nonatomic,strong) NSString * userphone;
+
 
 @end

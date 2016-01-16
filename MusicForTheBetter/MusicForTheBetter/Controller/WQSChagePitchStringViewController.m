@@ -16,9 +16,12 @@
 #import "WQSChangeMusicString.h"
 //录音菜单
 #import "LuYinMenuViewController.h"
+//
+#import "WQSDataBaseManager.h"
+#import "WQSMusicStringModel.h"
 
 
-@interface WQSChagePitchStringViewController () <UIPickerViewDataSource,UIPickerViewDelegate>
+@interface WQSChagePitchStringViewController () <UIPickerViewDataSource,UIPickerViewDelegate,UIAlertViewDelegate>
 
 //录音菜单
 @property (nonatomic,strong) LuYinMenuViewController * luYinMenuVC;
@@ -145,7 +148,6 @@
         button.titleLabel.font = [UIFont systemFontOfSize:20.0f];
         [button setTitle:@"" forState:UIControlStateNormal];
     }
-    
     self.accessoryPitchView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 54)];
     self.accessoryPitchView.backgroundColor = [UIColor whiteColor];
     self.pitchButton1 = [UIButton buttonWithType:UIButtonTypeSystem];
@@ -155,7 +157,6 @@
     self.pitchButton1.frame = CGRectMake(20, 5, 60, 44);
     [self.pitchButton1 addTarget:self action:@selector(pitchViewButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     self.pitchButton1.titleLabel.font = [UIFont systemFontOfSize:18.0f];
-    
     self.pitchButton2 = [UIButton buttonWithType:UIButtonTypeSystem];
     self.pitchButton2.tag = 411;
     [self.accessoryPitchView addSubview:self.pitchButton2];
@@ -168,7 +169,6 @@
 -(void)inputViewButtonClicked:(UIButton *) button{
     [self.keyBoardVC keyButton14Clicked:nil];
     self.centerTextView.text = [NSString stringWithFormat:@"%@%@",self.centerTextView.text,[button titleForState:UIControlStateNormal]];
-    
     for (NSInteger i = 400 ; i < 404 ; i++ ) {
         UIButton * button = (UIButton *)[self.accessoryInputView viewWithTag:i];
         [button setTitle:@"" forState:UIControlStateNormal];
@@ -204,6 +204,7 @@
     
 }
 
+//返回主页面、加入动画
 -(void)backToOtherVC{
     CATransition * transition = [[CATransition alloc]init];
     transition.duration = 1.0f;
@@ -211,12 +212,8 @@
     [self.view.layer addAnimation:transition forKey:nil];
     [self.navigationController popViewControllerAnimated:YES];
 }
+
 //**********************************************************
-
-
-
-
-
 
 //在没转调前不支持保存，如果用户点击保存，则会提示用户，
 -(void)showAboutSaveMusicString{
@@ -230,9 +227,36 @@
         transition.type = @"rippleEffect";
         [self.view.layer addAnimation:transition forKey:nil];
         [self presentViewController:alertC animated:YES completion:nil];
+    }else{
+        UIAlertView * alertView = [[UIAlertView alloc]initWithTitle:@"保存" message:@"请输入您要保存到本地的名字：" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:@"取消", nil];
+        [alertView setAlertViewStyle:UIAlertViewStylePlainTextInput];
+        [alertView show];
     }
 }
 
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    /**
+     *id 主键，用于唯一标示，能自增一
+     *title 谱的名字，（由用户输入，并自动加上原调、目标调）
+     *numbersstring 简谱内容
+     *time 保存时间
+     *username 用户名称（昵称）
+     *userphone 用户账号（手机号）
+     */
+    
+    WQSDataBaseManager * manager = [WQSDataBaseManager shareDataBaseManager];
+    WQSMusicStringModel * model = [[WQSMusicStringModel alloc]init];
+    
+    if(buttonIndex == 0){
+        UITextField * textField = [alertView textFieldAtIndex:0];
+        NSString * title = [NSString stringWithFormat:@"%@ (%@调->%@调)",textField.text,self.pitchOld,self.pitchNew];
+        model.title = title;
+    }
+    model.numbersstring = self.centerTextView.text;
+    model.username = @"浮生若梦亦如烟";
+    model.userphone = @"18137270550";
+    [manager insertAMessageToDataBase:model];
+}
 
 #pragma mark - 选调相关代理 - UIPickerViewDataSource
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		251491E11C4A3D1300A11A6E /* WQSPlayMusicManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 251491E01C4A3D1300A11A6E /* WQSPlayMusicManager.m */; };
+		251491E41C4A3E5800A11A6E /* WQSRecorderMusicManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 251491E31C4A3E5800A11A6E /* WQSRecorderMusicManager.m */; };
 		2527E34B1C48BC7300A6EFF8 /* WQSHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2527E34A1C48BC7300A6EFF8 /* WQSHelper.m */; };
 		2527E34F1C48F53A00A6EFF8 /* LuYinMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2527E34D1C48F53A00A6EFF8 /* LuYinMenuViewController.m */; };
 		2527E3501C48F53A00A6EFF8 /* LuYinMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2527E34E1C48F53A00A6EFF8 /* LuYinMenuViewController.xib */; };
@@ -104,6 +106,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		251491DF1C4A3D1300A11A6E /* WQSPlayMusicManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WQSPlayMusicManager.h; sourceTree = "<group>"; };
+		251491E01C4A3D1300A11A6E /* WQSPlayMusicManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WQSPlayMusicManager.m; sourceTree = "<group>"; };
+		251491E21C4A3E5800A11A6E /* WQSRecorderMusicManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WQSRecorderMusicManager.h; sourceTree = "<group>"; };
+		251491E31C4A3E5800A11A6E /* WQSRecorderMusicManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WQSRecorderMusicManager.m; sourceTree = "<group>"; };
 		2527E3491C48BC7300A6EFF8 /* WQSHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WQSHelper.h; sourceTree = "<group>"; };
 		2527E34A1C48BC7300A6EFF8 /* WQSHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WQSHelper.m; sourceTree = "<group>"; };
 		2527E34C1C48F53A00A6EFF8 /* LuYinMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuYinMenuViewController.h; sourceTree = "<group>"; };
@@ -281,6 +287,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		251491E51C4A4B2E00A11A6E /* 自己封装的工具方法 */ = {
+			isa = PBXGroup;
+			children = (
+				2535D4B51C439CED001B289F /* WQSConstant.h */,
+				25D93F051C45B1EA002C0AC6 /* WQSChangeMusicString.h */,
+				25D93F061C45B1EA002C0AC6 /* WQSChangeMusicString.m */,
+				2527E3491C48BC7300A6EFF8 /* WQSHelper.h */,
+				2527E34A1C48BC7300A6EFF8 /* WQSHelper.m */,
+			);
+			name = "自己封装的工具方法";
+			sourceTree = "<group>";
+		};
+		251491E61C4A4B4F00A11A6E /* 自己封装的数据库、录音、播放工具 */ = {
+			isa = PBXGroup;
+			children = (
+				25D7A6F51C490E4500950111 /* WQSDataBaseManager.h */,
+				25D7A6F61C490E4500950111 /* WQSDataBaseManager.m */,
+				251491DF1C4A3D1300A11A6E /* WQSPlayMusicManager.h */,
+				251491E01C4A3D1300A11A6E /* WQSPlayMusicManager.m */,
+				251491E21C4A3E5800A11A6E /* WQSRecorderMusicManager.h */,
+				251491E31C4A3E5800A11A6E /* WQSRecorderMusicManager.m */,
+			);
+			name = "自己封装的数据库、录音、播放工具";
+			sourceTree = "<group>";
+		};
+		251491E71C4A4BAF00A11A6E /* System Objects */ = {
+			isa = PBXGroup;
+			children = (
+				2591634C1C438CF50044942E /* AppDelegate.h */,
+				2591634D1C438CF50044942E /* AppDelegate.m */,
+				2591634F1C438CF50044942E /* ViewController.h */,
+				259163501C438CF50044942E /* ViewController.m */,
+			);
+			name = "System Objects";
+			sourceTree = "<group>";
+		};
 		2527E3511C4902F400A6EFF8 /* AFNetworking */ = {
 			isa = PBXGroup;
 			children = (
@@ -444,13 +486,8 @@
 		2535D4A61C439B1F001B289F /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				2535D4B51C439CED001B289F /* WQSConstant.h */,
-				25D93F051C45B1EA002C0AC6 /* WQSChangeMusicString.h */,
-				25D93F061C45B1EA002C0AC6 /* WQSChangeMusicString.m */,
-				2527E3491C48BC7300A6EFF8 /* WQSHelper.h */,
-				2527E34A1C48BC7300A6EFF8 /* WQSHelper.m */,
-				25D7A6F51C490E4500950111 /* WQSDataBaseManager.h */,
-				25D7A6F61C490E4500950111 /* WQSDataBaseManager.m */,
+				251491E61C4A4B4F00A11A6E /* 自己封装的数据库、录音、播放工具 */,
+				251491E51C4A4B2E00A11A6E /* 自己封装的工具方法 */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -501,7 +538,7 @@
 		2535D4AB1C439B1F001B289F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				25D93F081C45B315002C0AC6 /* 音符转换页面 */,
+				25D93F081C45B315002C0AC6 /* 音符转换页面、自定义键盘 */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -550,10 +587,7 @@
 		259163481C438CF50044942E /* MusicForTheBetter */ = {
 			isa = PBXGroup;
 			children = (
-				2591634C1C438CF50044942E /* AppDelegate.h */,
-				2591634D1C438CF50044942E /* AppDelegate.m */,
-				2591634F1C438CF50044942E /* ViewController.h */,
-				259163501C438CF50044942E /* ViewController.m */,
+				251491E71C4A4BAF00A11A6E /* System Objects */,
 				2535D4A51C439B1F001B289F /* Controller */,
 				2535D4A61C439B1F001B289F /* Helper */,
 				2535D4A71C439B1F001B289F /* Image */,
@@ -596,7 +630,7 @@
 			path = MusicForTheBetterUITests;
 			sourceTree = "<group>";
 		};
-		25D93F081C45B315002C0AC6 /* 音符转换页面 */ = {
+		25D93F081C45B315002C0AC6 /* 音符转换页面、自定义键盘 */ = {
 			isa = PBXGroup;
 			children = (
 				2535D4CA1C43B5E8001B289F /* WQSKeyBoardViewController.h */,
@@ -606,7 +640,7 @@
 				2527E34D1C48F53A00A6EFF8 /* LuYinMenuViewController.m */,
 				2527E34E1C48F53A00A6EFF8 /* LuYinMenuViewController.xib */,
 			);
-			name = "音符转换页面";
+			name = "音符转换页面、自定义键盘";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -790,6 +824,7 @@
 				2527E3791C4902F400A6EFF8 /* AFHTTPRequestOperationManager.m in Sources */,
 				2527E3E61C49038F00A6EFF8 /* UIImage+GIF.m in Sources */,
 				2527E3861C4902F400A6EFF8 /* UIProgressView+AFNetworking.m in Sources */,
+				251491E11C4A3D1300A11A6E /* WQSPlayMusicManager.m in Sources */,
 				2527E3EA1C49038F00A6EFF8 /* UIView+WebCacheOperation.m in Sources */,
 				2527E3E31C49038F00A6EFF8 /* SDWebImageManager.m in Sources */,
 				2527E3B51C49036200A6EFF8 /* JHRefreshAniBaseView.m in Sources */,
@@ -805,6 +840,7 @@
 				2527E3871C4902F400A6EFF8 /* UIRefreshControl+AFNetworking.m in Sources */,
 				2527E3BC1C49036200A6EFF8 /* UIScrollView+JHExtension.m in Sources */,
 				2527E3E91C49038F00A6EFF8 /* UIImageView+WebCache.m in Sources */,
+				251491E41C4A3E5800A11A6E /* WQSRecorderMusicManager.m in Sources */,
 				2527E3DE1C49038F00A6EFF8 /* SDImageCache.m in Sources */,
 				2535D4C81C43B0CB001B289F /* WQSChagePitchStringViewController.m in Sources */,
 				2535D4CD1C43B5E8001B289F /* WQSKeyBoardViewController.m in Sources */,
@@ -945,7 +981,7 @@
 				INFOPLIST_FILE = MusicForTheBetter/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.meiyou.MusicForTheBetter;
+				PRODUCT_BUNDLE_IDENTIFIER = com.qiangsheng.wang.MusicForTheBetter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -960,7 +996,7 @@
 				INFOPLIST_FILE = MusicForTheBetter/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.meiyou.MusicForTheBetter;
+				PRODUCT_BUNDLE_IDENTIFIER = com.qiangsheng.wang.MusicForTheBetter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
