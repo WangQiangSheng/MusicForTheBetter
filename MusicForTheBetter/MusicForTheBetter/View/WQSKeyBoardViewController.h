@@ -10,16 +10,18 @@
 
 #import "WQSChagePitchStringViewController.h"
 
+typedef void(^KeyBlock)(NSInteger number);
+
 @class WQSChagePitchStringViewController;
 
-@interface WQSKeyBoardViewController : UIViewController
 
-//转调主页面……
-@property (nonatomic,retain) WQSChagePitchStringViewController * changePitchStringVC;
+@interface WQSKeyBoardViewController : UIViewController
 
 //原调性、目标调性
 @property (nonatomic,strong) NSString * pitchOld;
 @property (nonatomic,strong) NSString * pitchNew;
+
+@property (nonatomic,copy) KeyBlock keyBoardBlock;
 
 @property (weak, nonatomic) IBOutlet UIView *keyBoardCenterView;
 

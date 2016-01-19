@@ -34,9 +34,18 @@
 //自定义选调键盘，键盘的头视图
 @property (nonatomic,strong) UIButton * pitchButton1;
 @property (nonatomic,strong) UIButton * pitchButton2;
+
 //是否有动过转调键盘
 @property (nonatomic,assign) BOOL yesOrNo;
 
+//0：高音 、 1：中音 、 2：低音
+@property (nonatomic,assign) NSInteger selectedPitch;
+
+//中间的输入框的字体大小设置
+@property (nonatomic,assign) CGFloat fontSize;
+
+//设置半音键
+@property (nonatomic,assign) BOOL semitone;
 
 @end
 
@@ -85,7 +94,10 @@
     self.pitchArrayData = @[oldPitch,newPitch];
     self.pitchOld = @"A";
     self.pitchNew = @"A";
+    self.selectedPitch = 1;
     self.yesOrNo = NO;
+    self.semitone = NO;
+    self.fontSize = 18.0f;
 }
 
 -(void)createView{
@@ -109,11 +121,11 @@
     [self createInputTopView];
     
     self.keyBoardVC = [[WQSKeyBoardViewController alloc]init];
-    self.keyBoardVC.changePitchStringVC = self;
+    [self addKeyBoardBlock];
     [self addChildViewController:self.keyBoardVC];
     self.centerTextView.inputView = self.keyBoardVC.view;
     self.centerTextView.inputAccessoryView = self.accessoryInputView;
-    self.centerTextView.font = [UIFont systemFontOfSize:18.0f];
+    self.centerTextView.font = [UIFont systemFontOfSize:self.fontSize];
     [self.view addSubview:self.centerTextView];
     
     self.pitchSelectView = [[UIPickerView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 216)];
@@ -122,6 +134,164 @@
     self.pitchSelectView.backgroundColor = [UIColor whiteColor];
 
 }
+
+#pragma mark - 键盘相应事件
+
+-(void)addKeyBoardBlock{
+    __weak typeof(self) weakSelf = self;
+    
+    self.keyBoardVC.keyBoardBlock = ^(NSInteger number){
+        
+        switch (number) {
+            case 11:
+                weakSelf.selectedPitch = 0;
+                break;
+                //------------------------------------------------->
+                
+            case 12:
+                weakSelf.fontSize += 1.0;
+                weakSelf.centerTextView.font = [UIFont systemFontOfSize:weakSelf.fontSize];
+                break;
+                //------------------------------------------------->
+                
+            case 13:
+                weakSelf.fontSize -= 1.0;
+                weakSelf.centerTextView.font = [UIFont systemFontOfSize:weakSelf.fontSize];
+                break;
+                //------------------------------------------------->
+                
+            case 14:
+                if(weakSelf.centerTextView.text.length > 0 ){
+                    NSMutableString * textString = [[NSMutableString alloc]initWithString: weakSelf.centerTextView.text];
+                    NSRange rangeLastChar  = NSMakeRange(textString.length-1, 1);
+                    NSRange rangeLastChar2 = NSMakeRange(textString.length-2, 1);
+                    NSRange rangeLastChar3 = NSMakeRange(textString.length-3, 1);
+                    NSArray * arrList = @[@"1",@"2",@"3",@"4",@"5",@"6",@"7"];
+                    NSArray * arrList2 = @[@" ",@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"\n"];
+                    NSString * lastChar = [textString substringWithRange:rangeLastChar];
+                    NSString * lastChar2 = nil;
+                    NSString * lastChar3 = nil;
+                    if(textString.length > 1){
+                        lastChar2 = [textString substringWithRange:rangeLastChar2];
+                    }
+                    if(textString.length > 2){
+                        lastChar3 = [textString substringWithRange:rangeLastChar3];
+                    }
+                    
+                    if([arrList2 containsObject:lastChar] && ![lastChar2 isEqualToString:@"#"]){
+                        weakSelf.centerTextView.text = [textString substringToIndex:textString.length-1];
+                    }else if ([arrList containsObject:lastChar] && [lastChar2 isEqualToString:@"#"]){
+                        weakSelf.centerTextView.text = [textString substringToIndex:textString.length-2];
+                    }else if ( ([lastChar isEqualToString:@")"] || [lastChar isEqualToString:@"]"] || [lastChar isEqualToString:@"}"]) &&  ![lastChar3 isEqualToString:@"#"] ){
+                        weakSelf.centerTextView.text = [textString substringToIndex:textString.length-3];
+                    }else if ( ([lastChar isEqualToString:@")"] || [lastChar isEqualToString:@"]"] || [lastChar isEqualToString:@"}"]) &&  [lastChar3 isEqualToString:@"#"] ){
+                        weakSelf.centerTextView.text = [textString substringToIndex:textString.length-4];
+                    }
+                    
+                }
+                break;
+                //------------------------------------------------->
+                
+            case 15:
+                [weakSelf.centerTextView resignFirstResponder];
+                break;
+                //------------------------------------------------->
+                
+            case 21:
+                weakSelf.selectedPitch = 1;
+                break;
+                //------------------------------------------------->
+                
+            case 22:
+                weakSelf.centerTextView.text = [weakSelf changeString:weakSelf.centerTextView.text andString:@"1"];
+                break;
+                //------------------------------------------------->
+                
+            case 23:
+                weakSelf.centerTextView.text = [weakSelf changeString:weakSelf.centerTextView.text andString:@"2"];
+                break;
+                //------------------------------------------------->
+                
+            case 24:
+                weakSelf.centerTextView.text = [weakSelf changeString:weakSelf.centerTextView.text andString:@"3"];
+                break;
+                //------------------------------------------------->
+                
+            case 25:
+                [weakSelf changeKeyBoard];
+                break;
+                //------------------------------------------------->
+                
+            case 31:
+                weakSelf.selectedPitch = 2;
+                break;
+                //------------------------------------------------->
+                
+            case 32:
+                weakSelf.centerTextView.text = [weakSelf changeString:weakSelf.centerTextView.text andString:@"4"];
+                break;
+                //------------------------------------------------->
+                
+            case 33:
+                weakSelf.centerTextView.text = [weakSelf changeString:weakSelf.centerTextView.text andString:@"5"];
+                break;
+                //------------------------------------------------->
+                
+            case 34:
+                weakSelf.centerTextView.text = [weakSelf changeString:weakSelf.centerTextView.text andString:@"6"];
+                break;
+                //------------------------------------------------->
+                
+            case 35:
+                [weakSelf showAboutSaveMusicString];
+                break;
+                //------------------------------------------------->
+                
+            case 41:
+                weakSelf.centerTextView.text = [NSString stringWithFormat:@"%@\n",weakSelf.centerTextView.text];
+                break;
+                //------------------------------------------------->
+                
+            case 42:
+                weakSelf.centerTextView.text = [weakSelf changeString:weakSelf.centerTextView.text andString:@"7"];
+                break;
+                //------------------------------------------------->
+                
+            case 43:
+                weakSelf.centerTextView.text = [NSString stringWithFormat:@"%@ ",weakSelf.centerTextView.text];
+                break;
+                //------------------------------------------------->
+                
+            case 44:
+                weakSelf.semitone = !weakSelf.semitone;
+                break;
+                //------------------------------------------------->
+                
+            case 45:
+                [weakSelf.centerTextView resignFirstResponder];
+                weakSelf.centerTextView.editable = NO;
+                break;
+                //------------------------------------------------->
+                
+            default:
+                NSLog(@"键盘错误！！！");
+                break;
+        }
+        
+    };
+}
+
+//动画切换两键盘
+-(void)changeKeyBoard{
+    [UIView animateWithDuration:0.55f animations:^{
+        [self.centerTextView resignFirstResponder];
+        self.centerTextView.inputView = self.pitchSelectView;
+        self.centerTextView.inputAccessoryView = self.accessoryPitchView;
+        [self.centerTextView becomeFirstResponder];
+    }];
+}
+
+
 
 #pragma mark - 创建键盘上方的视图
 -(void)createInputTopView{
@@ -185,8 +355,6 @@
         }];
     }else{
         self.centerTextView.text = [WQSChangeMusicString changeFromPitch:self.pitchOld ToPitch:self.pitchNew byTextString:self.centerTextView.text];
-        self.keyBoardVC.pitchOld = self.pitchOld;
-        self.keyBoardVC.pitchNew = self.pitchNew;
         [self.centerTextView resignFirstResponder];
     }
 }
@@ -194,14 +362,18 @@
 -(void)createNavationBarItems{
     UIBarButtonItem * backButton = [[UIBarButtonItem alloc]initWithTitle:@"主页" style:UIBarButtonItemStylePlain target:self action:@selector(backToOtherVC)];
     self.navigationItem.leftBarButtonItem = backButton;
-    UIBarButtonItem * luYinButton = [[UIBarButtonItem alloc]initWithTitle:@"录音" style:UIBarButtonItemStylePlain target:self action:@selector(luYinMenu)];
+    UIBarButtonItem * luYinButton = [[UIBarButtonItem alloc]initWithTitle:@"确定" style:UIBarButtonItemStylePlain target:self action:@selector(luYinMenu)];
     self.navigationItem.rightBarButtonItem = luYinButton;
 }
 
 -(void)luYinMenu{
-    
-    
-    
+    if([self.navigationItem.rightBarButtonItem.title isEqualToString:@"确定"]){
+        [self.centerTextView resignFirstResponder];
+        self.navigationItem.rightBarButtonItem.title = @"取消";
+    }else{
+        [self.centerTextView becomeFirstResponder];
+        self.navigationItem.rightBarButtonItem.title = @"确定";
+    }
 }
 
 //返回主页面、加入动画
@@ -289,6 +461,58 @@
         self.yesOrNo = YES;
     }
 }
+
+#pragma mark - 控制键盘的输入……
+
+-(NSString *)changeString:(NSString *) allString andString:(NSString *) newString{
+    NSString * allStr = nil;
+    NSString * lastPitch = nil;
+    
+    if(!self.semitone){
+        [self.inputButton1 setTitle:[NSString stringWithFormat:@"(%@)",newString] forState:UIControlStateNormal];
+        [self.inputButton2 setTitle:[NSString stringWithFormat:@"%@",newString] forState:UIControlStateNormal];
+        [self.inputButton3 setTitle:[NSString stringWithFormat:@"[%@]",newString] forState:UIControlStateNormal];
+        
+        if(self.selectedPitch == 0){
+            lastPitch = [NSString stringWithFormat:@"[%@]",newString];
+            allStr = [NSString stringWithFormat:@"%@%@",allString,lastPitch];
+            [self.inputButton4 setTitle:[NSString stringWithFormat:@"[#%@]",newString] forState:UIControlStateNormal];
+        }else if (self.selectedPitch == 1){
+            lastPitch = newString;
+            allStr = [NSString stringWithFormat:@"%@%@",allString,newString];
+            [self.inputButton4 setTitle:[NSString stringWithFormat:@"#%@",newString] forState:UIControlStateNormal];
+        }else if (self.selectedPitch == 2){
+            lastPitch = [NSString stringWithFormat:@"(%@)",newString];
+            allStr = [NSString stringWithFormat:@"%@%@",allString,lastPitch];
+            [self.inputButton4 setTitle:[NSString stringWithFormat:@"(#%@)",newString] forState:UIControlStateNormal];
+        }
+    }else{
+        [self.inputButton1 setTitle:[NSString stringWithFormat:@"(#%@)",newString] forState:UIControlStateNormal];
+        [self.inputButton2 setTitle:[NSString stringWithFormat:@"#%@",newString] forState:UIControlStateNormal];
+        [self.inputButton3 setTitle:[NSString stringWithFormat:@"[#%@]",newString] forState:UIControlStateNormal];
+        
+        if(self.selectedPitch == 0){
+            lastPitch = [NSString stringWithFormat:@"[#%@]",newString];
+            allStr = [NSString stringWithFormat:@"%@%@",allString,lastPitch];
+            [self.inputButton4 setTitle:[NSString stringWithFormat:@"[%@]",newString] forState:UIControlStateNormal];
+        }else if (self.selectedPitch == 1){
+            lastPitch = [NSString stringWithFormat:@"#%@",newString];
+            allStr = [NSString stringWithFormat:@"%@%@",allString,lastPitch];
+            [self.inputButton4 setTitle:[NSString stringWithFormat:@"%@",newString] forState:UIControlStateNormal];
+        }else if (self.selectedPitch == 2){
+            lastPitch = [NSString stringWithFormat:@"(#%@)",newString];
+            allStr = [NSString stringWithFormat:@"%@%@",allString,lastPitch];
+            [self.inputButton4 setTitle:[NSString stringWithFormat:@"(%@)",newString] forState:UIControlStateNormal];
+        }
+    }
+    return allStr;
+}
+
+
+
+
+
+
 
 
 -(void)didReceiveMemoryWarning{
