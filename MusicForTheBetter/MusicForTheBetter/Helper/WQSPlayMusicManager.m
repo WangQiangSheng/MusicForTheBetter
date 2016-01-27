@@ -31,9 +31,25 @@ static WQSPlayMusicManager * manager = nil;
         //***   这个地方必须用copy，否则有可能出现 block 为空，从而产生各种离奇的错误
         self.block = [block copy];
     }
-    return manager;
+    return self;
 }
 
+//返回当前音乐总时长
+-(NSString *)getDurationTimeWithPath:(NSString *) recorderPath{
+    //如果播放任务存在并且正在播放，则停掉当前任务，从新开启新任务
+    if(self.player){
+        self.player = nil;
+    }
+    //开启一个播放任务，并开始播放
+    self.player = [[AVAudioPlayer alloc]initWithContentsOfURL:[NSURL fileURLWithPath:recorderPath] error:nil];
+    NSInteger recorderDuration = (CGFloat)self.player.duration/1;
+    return [NSString stringWithFormat:@"%02ld:%02ld",recorderDuration/60,recorderDuration%60];
+}
+
++(NSString *)getFormateTime:(NSTimeInterval) time{
+    NSInteger currentDuration = (CGFloat)time/1;
+    return [NSString stringWithFormat:@"%02ld:%02ld",currentDuration/60,currentDuration%60];
+}
 
 //开始播放任务
 -(void)startPlayWithPath:(NSString *) path{
@@ -44,15 +60,18 @@ static WQSPlayMusicManager * manager = nil;
             self.player = nil;
         }
     }
+    
     //如果block存在且不为空，则证明是需要刷新UI的界面在调用
     if(self.block && self.block != nil){
         if(!self.timer){
             self.timer = [NSTimer scheduledTimerWithTimeInterval:0.1f target:self selector:@selector(refreshPlayView:) userInfo:nil repeats:YES];
         }
     }
+    
     //开启一个播放任务，并开始播放
     self.player = [[AVAudioPlayer alloc]initWithContentsOfURL:[NSURL fileURLWithPath:path] error:nil];
     [self.player play];
+    
 }
 
 

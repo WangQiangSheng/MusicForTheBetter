@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "FMDB.h"
 #import "WQSMusicStringModel.h"
+#import "WQSRecorderMessagesModel.h"
 
 //用于存贮在本地数据库的操作
 
@@ -20,17 +21,27 @@
 //获取数据库操作单例
 +(instancetype)shareDataBaseManager;
 
-//查询语句
--(NSArray *)selectMusicStringByDataBase;
 
+//------------------------------对转调简谱的操作
 //插入语句
--(void)insertAMessageToDataBase:(WQSMusicStringModel *) stringModel;
-
-//删除语句
--(void)deleteAmessageToDataBase:(NSString *) idNumber;
-
+-(void)insertMisicStringMessageToDataBase:(WQSMusicStringModel *) stringModel;
 //修改语句
--(void)changeAmessageToDataBase:(WQSMusicStringModel *) stringModel;
+-(void)changeMusicStringMessageToDataBase:(WQSMusicStringModel *) stringModel;
+
+
+//------------------------------对转调简谱、录音的共有操作
+//查询语句
+-(NSArray *)selectMusicStringByDataBaseFrom:(NSString * ) table;
+//删除语句
+-(void)deleteAmessageToDataBase:(NSString *) idNumber AndFrom:(NSString * ) table;
+
+
+//------------------------------对转调录音的操作
+//修改语句
+-(void)changeRecorderMessageToDataBase:(WQSRecorderMessagesModel *) rocorderModel;
+//插入语句
+-(void)insertRecorderMessageToDataBase:(WQSRecorderMessagesModel *) recorderModel;
+
 
 
 @end

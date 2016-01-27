@@ -16,12 +16,22 @@
 #import "WQSChangeMusicString.h"
 //录音菜单
 #import "LuYinMenuViewController.h"
-//
+//数据库操作单例
 #import "WQSDataBaseManager.h"
+//存储简谱数据模型
 #import "WQSMusicStringModel.h"
+//录音操作单例
+#import "WQSRecorderMusicManager.h"
+//
+#import "WQSPlayMusicManager.h"
+//
+
+#define RECORDERFILES [NSString stringWithFormat:@"%@/Documents/RecorderList",NSHomeDirectory()]
+#define RECORDERFILEPATH [NSHomeDirectory() stringByAppendingString:@"/Documents/RecorderList/Test.caf"]
 
 
-@interface WQSChagePitchStringViewController () <UIPickerViewDataSource,UIPickerViewDelegate,UIAlertViewDelegate>
+
+@interface WQSChagePitchStringViewController () <UIPickerViewDataSource,UIPickerViewDelegate>
 
 //录音菜单
 @property (nonatomic,strong) LuYinMenuViewController * luYinMenuVC;
@@ -46,6 +56,13 @@
 
 //设置半音键
 @property (nonatomic,assign) BOOL semitone;
+
+//定时刷新录音时间用的定时器
+@property (nonatomic,strong) NSTimer * luyinTimer;
+
+//
+@property (nonatomic,assign) NSInteger timeNumber;
+
 
 @end
 
@@ -97,7 +114,9 @@
     self.selectedPitch = 1;
     self.yesOrNo = NO;
     self.semitone = NO;
+    self.timeNumber = 0;
     self.fontSize = 18.0f;
+    self.luyinTimer = nil;
 }
 
 -(void)createView{
@@ -109,13 +128,16 @@
     self.centerTextView.backgroundColor = RGB(230, 230, 230);
     self.automaticallyAdjustsScrollViewInsets = NO;
     
-    LuYinMenuViewController * luYinMenu = [[LuYinMenuViewController alloc]init];
+    self.luYinMenuVC = [[LuYinMenuViewController alloc]init];
+    [self addLuyinMenuBlock];
+    [self addChildViewController:self.luYinMenuVC];
+    
     UIView * luYinView = [[UIView alloc]initWithFrame:CGRectMake(0, ScreenHeight-100, ScreenWidth, 100)];
     [self.view addSubview:luYinView];
-    luYinMenu.view.frame = luYinView.bounds;
-    [luYinView addSubview:luYinMenu.view];
-    [self addChildViewController:luYinMenu];
-    luYinMenu.changePitchVC = self;
+    self.luYinMenuVC.view.frame = luYinView.bounds;
+    [luYinView addSubview:self.luYinMenuVC.view];
+    
+    
     
     //创建键盘上方的视图
     [self createInputTopView];
@@ -135,13 +157,143 @@
 
 }
 
-#pragma mark - 键盘相应事件
+#pragma mark - 录音键盘相应事件
+-(void)addLuyinMenuBlock{
+    __weak typeof(self) weakSelf = self;
+    
+    WQSPlayMusicManager * playMusicManager = [[WQSPlayMusicManager alloc]init];
+    WQSRecorderMusicManager * recorderManager = [WQSRecorderMusicManager shareRecorderMusicManager];
+    NSLog(@"\n%@\n",RECORDERFILEPATH);
+    self.luYinMenuVC.luyinBlock = ^(NSInteger number){
+        switch (number) {
+                
+            case 61:
+                NSLog(@"61");
+                [recorderManager startRecorderWithSavePath:RECORDERFILEPATH];
+                weakSelf.timeNumber = 0;
+                if(!weakSelf.luyinTimer){
+                    weakSelf.luyinTimer = [NSTimer scheduledTimerWithTimeInterval:0.01f target:weakSelf selector:@selector(refreshRecorderTimer) userInfo:nil repeats:YES];
+                }
+                break;
+                //------------------------------------------------->
+                
+            case 62:
+                NSLog(@"62");
+                if ([@"暂停" isEqualToString: [weakSelf.luYinMenuVC.luYin2Button titleForState:UIControlStateNormal]]){
+                    [weakSelf.luYinMenuVC.luYin2Button setTitle:@"继续" forState:UIControlStateNormal];
+                    if(weakSelf.luyinTimer){
+                        [weakSelf.luyinTimer invalidate];
+                        weakSelf.luyinTimer = nil;
+                    }
+                    [recorderManager pauseOrStartRecorder];
+                }else{
+                    [weakSelf.luYinMenuVC.luYin2Button setTitle:@"暂停" forState:UIControlStateNormal];
+                    if(!weakSelf.luyinTimer){
+                        weakSelf.luyinTimer = [NSTimer scheduledTimerWithTimeInterval:0.01f target:weakSelf selector:@selector(refreshRecorderTimer) userInfo:nil repeats:YES];
+                    }
+                    [recorderManager pauseOrStartRecorder];
+                }
+                break;
+                //------------------------------------------------->
+                
+            case 63:
+                [recorderManager stopRecorder];
+                if(weakSelf.luyinTimer){
+                    [weakSelf.luyinTimer invalidate];
+                    weakSelf.luyinTimer = nil;
+                }
+                break;
+                //------------------------------------------------->
+                
+            case 64:
+                [recorderManager stopRecorder];
+                [weakSelf.luyinTimer invalidate];
+                weakSelf.luyinTimer = nil;
+                [weakSelf showSaveRecorderNameTextField];
+                
+                break;
+                //------------------------------------------------->
+                
+            case 65:
+                if([[NSFileManager defaultManager] fileExistsAtPath:RECORDERFILEPATH]){
+                    [playMusicManager startPlayWithPath:RECORDERFILEPATH];
+                }else{
+                    [weakSelf showLocalRecorder];
+                }
+               
+                
+                break;
+                //------------------------------------------------->
+                
+            default:
+                break;
+        }
+    };
 
+}
+
+-(void)showLocalRecorder{
+    UIAlertController * alertVC = [UIAlertController alertControllerWithTitle:@"温馨提示：" message:@"您还没有在当前页面录音哦，只有在当前页面录音才支持此处播放~~" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction * actionDefault = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {}];
+    [alertVC addAction:actionDefault];
+    CATransition * transition = [[CATransition alloc]init];
+    transition.duration = 0.45;
+    transition.type = @"rippleEffect";
+    [self.view.layer addAnimation:transition forKey:nil];
+    [self presentViewController:alertVC animated:YES completion:^{
+    }];
+}
+
+//弹出要保存录音名字
+-(void)showSaveRecorderNameTextField{
+    WQSDataBaseManager * manager = [WQSDataBaseManager shareDataBaseManager];
+    WQSRecorderMessagesModel * recorderMessagesModel = [[WQSRecorderMessagesModel alloc]init];
+    NSFileManager * fileManager = [NSFileManager defaultManager];
+    
+    UIAlertController * alertVC = [UIAlertController alertControllerWithTitle:@"温馨提示：" message:@"请输入您想将改录音存储到手机上的名字~~~" preferredStyle:UIAlertControllerStyleAlert];
+    [alertVC addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.placeholder = @"请输入要保存的名字~";
+    }];
+    UIAlertAction * actionDefault = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        recorderMessagesModel.title = alertVC.textFields.firstObject.text;
+        NSString * recorderPath = [NSString stringWithFormat:@"%@.caf",alertVC.textFields.firstObject.text];
+        NSLog(@"recorderPath:%@",recorderPath);
+        recorderMessagesModel.filespath = recorderPath;
+        recorderMessagesModel.username = @"浮生若梦亦如烟";
+        recorderMessagesModel.userphone = @"18137270550";
+        recorderMessagesModel.heart = @"0";
+        [manager insertRecorderMessageToDataBase:recorderMessagesModel];
+        [fileManager copyItemAtPath:RECORDERFILEPATH toPath:[NSString stringWithFormat:@"%@/%@",RECORDERFILES, recorderPath] error:nil];
+    }];
+    UIAlertAction * actionCancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {}];
+    [alertVC addAction:actionCancel];
+    [alertVC addAction:actionDefault];
+    
+    CATransition * transition = [[CATransition alloc]init];
+    transition.duration = 0.45;
+    transition.type = @"rippleEffect";
+    [self.view.layer addAnimation:transition forKey:nil];
+    [self presentViewController:alertVC animated:YES completion:^{
+    }];
+}
+
+-(void)refreshRecorderTimer{
+    
+    NSString * timeLabel = [NSString stringWithFormat:@"%02d:%02d:%02d:%02d",(int)self.timeNumber/3600/60,(int)self.timeNumber/3600,(int)self.timeNumber/60%60,(int)self.timeNumber%60];
+    self.timeNumber++;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.luYinMenuVC.luYinTime.text = timeLabel;
+    });
+    
+}
+
+
+
+#pragma mark - 输入键盘相应事件
 -(void)addKeyBoardBlock{
     __weak typeof(self) weakSelf = self;
     
     self.keyBoardVC.keyBoardBlock = ^(NSInteger number){
-        
         switch (number) {
             case 11:
                 weakSelf.selectedPitch = 0;
@@ -270,6 +422,7 @@
             case 45:
                 [weakSelf.centerTextView resignFirstResponder];
                 weakSelf.centerTextView.editable = NO;
+                weakSelf.navigationItem.rightBarButtonItem.title = @"编辑";
                 break;
                 //------------------------------------------------->
                 
@@ -355,7 +508,15 @@
         }];
     }else{
         self.centerTextView.text = [WQSChangeMusicString changeFromPitch:self.pitchOld ToPitch:self.pitchNew byTextString:self.centerTextView.text];
-        [self.centerTextView resignFirstResponder];
+        [UIView animateWithDuration:0.25f animations:^{
+            [self.centerTextView resignFirstResponder];
+            self.centerTextView.inputView = self.keyBoardVC.view;
+            self.centerTextView.inputAccessoryView = self.accessoryInputView;
+            [self.centerTextView becomeFirstResponder];
+        }];
+        self.centerTextView.editable = YES;
+        [self.centerTextView becomeFirstResponder];
+        self.navigationItem.rightBarButtonItem.title = @"确定";
     }
 }
 
@@ -369,7 +530,7 @@
 -(void)luYinMenu{
     if([self.navigationItem.rightBarButtonItem.title isEqualToString:@"确定"]){
         [self.centerTextView resignFirstResponder];
-        self.navigationItem.rightBarButtonItem.title = @"取消";
+        self.navigationItem.rightBarButtonItem.title = @"编辑";
     }else{
         [self.centerTextView becomeFirstResponder];
         self.navigationItem.rightBarButtonItem.title = @"确定";
@@ -389,6 +550,9 @@
 
 //在没转调前不支持保存，如果用户点击保存，则会提示用户，
 -(void)showAboutSaveMusicString{
+    
+    WQSDataBaseManager * manager = [WQSDataBaseManager shareDataBaseManager];
+    WQSMusicStringModel * musicStringModel = [[WQSMusicStringModel alloc]init];
     if(!self.yesOrNo){
         UIAlertController * alertC = [UIAlertController alertControllerWithTitle:@"温馨提示：" message:@"只有转过调的谱子，才支持保存到本地哦~~~" preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction * acitonDefault = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
@@ -400,35 +564,32 @@
         [self.view.layer addAnimation:transition forKey:nil];
         [self presentViewController:alertC animated:YES completion:nil];
     }else{
-        UIAlertView * alertView = [[UIAlertView alloc]initWithTitle:@"保存" message:@"请输入您要保存到本地的名字：" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:@"取消", nil];
-        [alertView setAlertViewStyle:UIAlertViewStylePlainTextInput];
-        [alertView show];
+        UIAlertController * alertVC = [UIAlertController alertControllerWithTitle:@"温馨提示：" message:@"请输入您要保存到本地的名字：~~~" preferredStyle:UIAlertControllerStyleAlert];
+        [alertVC addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+            textField.placeholder = @"请输入要保存的名字~";
+        }];
+        UIAlertAction * actionDefault = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            musicStringModel.title = alertVC.textFields.firstObject.text;
+            musicStringModel.pitchs = [NSString stringWithFormat:@"%@调->%@调",self.pitchOld,self.pitchNew];
+            musicStringModel.numbersstring = self.centerTextView.text;
+            musicStringModel.username = @"浮生若梦亦如烟";
+            musicStringModel.userphone = @"18137270550";
+            [manager insertMisicStringMessageToDataBase:musicStringModel];
+        
+        }];
+        UIAlertAction * actionCancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {}];
+        [alertVC addAction:actionCancel];
+        [alertVC addAction:actionDefault];
+        
+        CATransition * transition = [[CATransition alloc]init];
+        transition.duration = 0.45;
+        transition.type = @"rippleEffect";
+        [self.view.layer addAnimation:transition forKey:nil];
+        [self presentViewController:alertVC animated:YES completion:^{
+        }];
     }
 }
 
--(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    /**
-     *id 主键，用于唯一标示，能自增一
-     *title 谱的名字，（由用户输入，并自动加上原调、目标调）
-     *numbersstring 简谱内容
-     *time 保存时间
-     *username 用户名称（昵称）
-     *userphone 用户账号（手机号）
-     */
-    
-    WQSDataBaseManager * manager = [WQSDataBaseManager shareDataBaseManager];
-    WQSMusicStringModel * model = [[WQSMusicStringModel alloc]init];
-    
-    if(buttonIndex == 0){
-        UITextField * textField = [alertView textFieldAtIndex:0];
-        NSString * title = [NSString stringWithFormat:@"%@ (%@调->%@调)",textField.text,self.pitchOld,self.pitchNew];
-        model.title = title;
-    }
-    model.numbersstring = self.centerTextView.text;
-    model.username = @"浮生若梦亦如烟";
-    model.userphone = @"18137270550";
-    [manager insertAMessageToDataBase:model];
-}
 
 #pragma mark - 选调相关代理 - UIPickerViewDataSource
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
@@ -467,12 +628,10 @@
 -(NSString *)changeString:(NSString *) allString andString:(NSString *) newString{
     NSString * allStr = nil;
     NSString * lastPitch = nil;
-    
     if(!self.semitone){
         [self.inputButton1 setTitle:[NSString stringWithFormat:@"(%@)",newString] forState:UIControlStateNormal];
         [self.inputButton2 setTitle:[NSString stringWithFormat:@"%@",newString] forState:UIControlStateNormal];
         [self.inputButton3 setTitle:[NSString stringWithFormat:@"[%@]",newString] forState:UIControlStateNormal];
-        
         if(self.selectedPitch == 0){
             lastPitch = [NSString stringWithFormat:@"[%@]",newString];
             allStr = [NSString stringWithFormat:@"%@%@",allString,lastPitch];
@@ -507,12 +666,6 @@
     }
     return allStr;
 }
-
-
-
-
-
-
 
 
 -(void)didReceiveMemoryWarning{

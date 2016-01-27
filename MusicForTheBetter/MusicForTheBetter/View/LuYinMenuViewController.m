@@ -12,9 +12,22 @@
 @interface LuYinMenuViewController ()
 
 
-@property (weak, nonatomic) IBOutlet UILabel *menuLabel;
+
+//开始按钮
+@property (weak, nonatomic) IBOutlet UIButton *luYin1Button;
+
+//结束按钮
+@property (weak, nonatomic) IBOutlet UIButton *luYin3Button;
+//保存按钮
+@property (weak, nonatomic) IBOutlet UIButton *luYin4Button;
+
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *menuLabel;
+
+
+@property (nonatomic,strong) NSTimer * timer;
+@property (nonatomic,assign) NSInteger timeNumber;
 
 @end
 
@@ -22,6 +35,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.timer = nil;
+    self.timeNumber = 0;
+    self.luYin2Button.selected = YES;
+    self.luYin3Button.selected = YES;
+    self.luYin4Button.selected = YES;
+    
     [self createView];
 }
 
@@ -48,42 +67,54 @@
 
 //开始按钮
 - (IBAction)luYin1ButtonClicked:(id)sender {
+    self.luYin2Button.selected = NO;
+    self.luYin3Button.selected = NO;
+    self.luYin4Button.selected = NO;
+    if(!self.luYin1Button.selected){
+        self.luyinBlock(61);
+    }
     
 }
 
-//暂停按钮
+//暂停按钮   暂停:62
 - (IBAction)luYin2ButtonClicked:(id)sender {
-    
+    if(!self.luYin2Button.selected){
+        self.luyinBlock(62);
+    }
 }
 
 //结束按钮
 - (IBAction)luYin3ButtonClicked:(id)sender {
     
+    if(!self.luYin3Button.selected){
+        self.luyinBlock(63);
+    }
+    self.luYin2Button.selected = YES;
+    self.luYin3Button.selected = YES;
+    [self.luYin2Button setTitle:@"暂停" forState:UIControlStateNormal];
 }
 
 //保存按钮
 - (IBAction)luYin4ButtonClicked:(id)sender {
     
+    if(!self.luYin4Button.selected){
+        self.luyinBlock(64);
+    }
+    self.luYin2Button.selected = YES;
+    self.luYin3Button.selected = YES;
+    self.luYin4Button.selected = YES;
+    [self.luYin2Button setTitle:@"暂停" forState:UIControlStateNormal];
 }
 
-//编辑按钮
+//播放按钮
 - (IBAction)luYin5ButtonClicked:(id)sender {
-    
+    self.luyinBlock(65);
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -23,17 +23,10 @@
             <rect key="frame" x="0.0" y="0.0" width="640" height="200"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="时间：" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dEw-cB-ErJ">
-                    <rect key="frame" x="260" y="30" width="130" height="40"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="646-HJ-toh">
+                    <rect key="frame" x="400" y="25" width="220" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="646-HJ-toh">
-                    <rect key="frame" x="410" y="25" width="210" height="50"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -48,6 +41,9 @@
                             <state key="normal" title="暂停">
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <state key="selected">
+                                <color key="titleColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
                             <connections>
                                 <action selector="luYin2ButtonClicked:" destination="-1" eventType="touchUpInside" id="r2e-T5-2UI"/>
                             </connections>
@@ -60,6 +56,9 @@
                             <state key="normal" title="结束">
                                 <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
+                            <state key="selected">
+                                <color key="titleColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
                             <connections>
                                 <action selector="luYin3ButtonClicked:" destination="-1" eventType="touchUpInside" id="fO3-As-6EL"/>
                             </connections>
@@ -69,6 +68,9 @@
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="开始">
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected">
+                                <color key="titleColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>
                                 <action selector="luYin1ButtonClicked:" destination="-1" eventType="touchUpInside" id="vj9-hP-8PX"/>
@@ -82,6 +84,9 @@
                             <state key="normal" title="保存">
                                 <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
+                            <state key="selected">
+                                <color key="titleColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
                             <connections>
                                 <action selector="luYin4ButtonClicked:" destination="-1" eventType="touchUpInside" id="wMT-R9-FgH"/>
                             </connections>
@@ -94,6 +99,9 @@
                             <state key="normal" title="试听">
                                 <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
+                            <state key="selected">
+                                <color key="titleColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
                             <connections>
                                 <action selector="luYin5ButtonClicked:" destination="-1" eventType="touchUpInside" id="Ffh-EJ-Her"/>
                             </connections>
@@ -102,9 +110,16 @@
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="录音菜单" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Rax-71-j9y">
-                    <rect key="frame" x="20" y="20" width="220" height="60"/>
+                    <rect key="frame" x="20" y="20" width="200" height="60"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="时间：" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dEw-cB-ErJ">
+                    <rect key="frame" x="240" y="30" width="140" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>

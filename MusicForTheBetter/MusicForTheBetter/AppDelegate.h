@@ -17,6 +17,10 @@
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
+//播放页面的播放模式
+@property (nonatomic,assign) BOOL schema;
+
+
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 

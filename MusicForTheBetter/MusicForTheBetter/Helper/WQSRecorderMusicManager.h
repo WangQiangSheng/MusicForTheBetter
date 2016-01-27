@@ -20,6 +20,7 @@
 @property (nonatomic,strong) AVAudioRecorder * playRecorder;
 
 //存贮录音音频的相关设置
+
 @property (nonatomic,strong) NSMutableDictionary * playDictionary;
 
 //获取录音相关单例

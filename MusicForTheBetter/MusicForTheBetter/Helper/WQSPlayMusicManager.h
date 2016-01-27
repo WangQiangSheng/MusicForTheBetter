@@ -38,7 +38,10 @@ typedef void(^playerBlock)(AVAudioPlayer * player);
 //结束播放
 -(void)stopPlay;
 
+//获取音乐总时长
+-(NSString *)getDurationTimeWithPath:(NSString *) recorderPath;
 
-
+//获取格式化的时间
++(NSString *)getFormateTime:(NSTimeInterval) time;
 
 @end

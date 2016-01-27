@@ -13,6 +13,8 @@
 
 //音符转换页面
 #import "WQSChagePitchStringViewController.h"
+//
+#import "LocalResourceViewController.h"
 
 #define Left [UIScreen mainScreen].bounds.size.width/5.0
 #define Bottom [UIScreen mainScreen].bounds.size.height/6.0
@@ -185,9 +187,9 @@
 
 
 -(void)createMusicStringViewController{
-//    //    MusicStringViewController * mvc = [[MusicStringViewController alloc]init];
-//    _mvc.title = @"本地曲谱";
-//    [self.navigationController pushViewController:_mvc animated:YES];
+    LocalResourceViewController * localVC = [[LocalResourceViewController alloc]init];
+    localVC.title = @"本地资源";
+    [self.navigationController pushViewController:localVC animated:YES];
 }
 -(void)createStudentViewController{
 //    StudyMusicViewController * svc = [[StudyMusicViewController alloc]init];

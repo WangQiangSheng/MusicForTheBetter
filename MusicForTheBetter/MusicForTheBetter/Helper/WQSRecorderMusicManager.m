@@ -46,14 +46,12 @@ static WQSRecorderMusicManager * manager = nil;
         [self.playRecorder stop];
         self.playRecorder = nil;
     }
-    
     self.playRecorder = [[AVAudioRecorder alloc]initWithURL:[NSURL fileURLWithPath:path] settings:self.playDictionary error:nil];
-    
     if([self.playRecorder prepareToRecord]){
         [self.playRecorder record];
     }
-    
 }
+
 
 //开始或暂停录音
 -(void)pauseOrStartRecorder{
@@ -65,6 +63,7 @@ static WQSRecorderMusicManager * manager = nil;
         }
     }
 }
+
 
 //结束录音
 -(void)stopRecorder{

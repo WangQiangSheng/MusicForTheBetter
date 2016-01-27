@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WQSPlayRecorderViewController">
+            <connections>
+                <outlet property="allTimeLabel" destination="8a7-Cu-KYu" id="BBX-Em-A3X"/>
+                <outlet property="centerImageView" destination="6fF-sf-eL4" id="Y7G-ux-VGE"/>
+                <outlet property="currentLabel" destination="hcK-qa-WqH" id="Exf-PN-GXp"/>
+                <outlet property="heartButton" destination="Ax6-AO-cMU" id="YUA-Df-9T6"/>
+                <outlet property="lastButton" destination="t2W-oG-qLv" id="TxX-4o-NYJ"/>
+                <outlet property="nameLabel" destination="GaG-Ka-AxR" id="HSL-8c-VHl"/>
+                <outlet property="needleImageView" destination="j7d-pI-Fwt" id="TrT-pT-zOG"/>
+                <outlet property="nextButton" destination="bbQ-au-ue0" id="ZTY-fH-uN8"/>
+                <outlet property="progressView" destination="66W-5B-W7m" id="jvC-kf-w6N"/>
+                <outlet property="schemaButton" destination="3Hs-ms-INr" id="mcc-Q9-WLg"/>
+                <outlet property="startOrPauseButton" destination="7rG-1q-fwy" id="Vyu-lX-b1y"/>
+                <outlet property="titleLabel" destination="rZR-Re-sJu" id="NcB-XE-2CT"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" id="7MF-jE-JpO">
+                    <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="旅行" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rZR-Re-sJu">
+                            <rect key="frame" x="20" y="30" width="335" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="——   浮生若梦亦如烟   ——" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GaG-Ka-AxR">
+                            <rect key="frame" x="10" y="90" width="355" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" id="66W-5B-W7m">
+                            <rect key="frame" x="70" y="454" width="235" height="2"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                        </progressView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8a7-Cu-KYu">
+                            <rect key="frame" x="310" y="445" width="60" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="7rG-1q-fwy">
+                            <rect key="frame" x="157" y="480" width="61" height="61"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="play.png"/>
+                            <state key="selected" image="pause.png"/>
+                            <connections>
+                                <action selector="startOrPauseClicked:" destination="-1" eventType="touchUpInside" id="wxr-7D-2s6"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="t2W-oG-qLv">
+                            <rect key="frame" x="28" y="477" width="45" height="45"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="last.png"/>
+                            <connections>
+                                <action selector="lastRecorderClicked:" destination="-1" eventType="touchUpInside" id="Owl-Qn-vyz"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="bbQ-au-ue0">
+                            <rect key="frame" x="303" y="477" width="45" height="45"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="next.png"/>
+                            <connections>
+                                <action selector="nextRecorderClicked:" destination="-1" eventType="touchUpInside" id="u2U-4d-8Xr"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="3Hs-ms-INr">
+                            <rect key="frame" x="256" y="547" width="28" height="28"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="line.png"/>
+                            <state key="selected" image="random.png"/>
+                            <connections>
+                                <action selector="schemaClicked:" destination="-1" eventType="touchUpInside" id="h9J-it-4p7"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Ax6-AO-cMU">
+                            <rect key="frame" x="80" y="549" width="24" height="24"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="heart.png"/>
+                            <state key="selected" image="redHeart.png"/>
+                            <connections>
+                                <action selector="heartClicked:" destination="-1" eventType="touchUpInside" id="rSQ-tr-W3k"/>
+                            </connections>
+                        </button>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cover.png" id="6fF-sf-eL4">
+                            <rect key="frame" x="70" y="175" width="235" height="235"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="needle.png" id="j7d-pI-Fwt">
+                            <rect key="frame" x="180" y="120" width="60" height="120"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hcK-qa-WqH">
+                            <rect key="frame" x="8" y="445" width="60" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.83297275640000001" green="0.83297275640000001" blue="0.83297275640000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="tintColor" red="0.038406808649999999" green="0.74342948720000002" blue="0.1073197991" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <point key="canvasLocation" x="58.5" y="360.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="cover.png" width="212" height="212"/>
+        <image name="heart.png" width="24" height="24"/>
+        <image name="last.png" width="45" height="45"/>
+        <image name="line.png" width="28" height="28"/>
+        <image name="needle.png" width="80" height="140"/>
+        <image name="next.png" width="45" height="45"/>
+        <image name="pause.png" width="45" height="45"/>
+        <image name="play.png" width="45" height="45"/>
+        <image name="random.png" width="28" height="28"/>
+        <image name="redHeart.png" width="24" height="24"/>
+    </resources>
+</document>

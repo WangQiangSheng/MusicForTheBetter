@@ -21,6 +21,9 @@
 //转调后的谱子
 @property (nonatomic,strong) NSString * numbersstring;
 
+//存储目标调性
+@property (nonatomic,strong) NSString * pitchs;
+
 //存贮转调谱子的时间
 @property (nonatomic,strong) NSString * time;
 
